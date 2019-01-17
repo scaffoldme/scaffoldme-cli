@@ -1,0 +1,11 @@
+
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+
+# Include compiled bin directory
+!bin/
+
+# Include pkg-ed dist directory
+!dist/

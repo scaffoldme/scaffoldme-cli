@@ -2,18 +2,37 @@
   "name": "haakily-cli",
   "version": "1.0.0",
   "description": "haakily cli to generate project backend and frontend",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tmahamadou001/haakily-cli.git"
+  },
+  "bin": {
+    "haakyli-cli": "./lib/index.js"
   },
   "author": "Mahamadou Traore",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tmahamadou001/haakily-cli/issues"
   },
-  "homepage": "https://github.com/tmahamadou001/haakily-cli#readme"
+  "homepage": "https://github.com/tmahamadou001/haakily-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "0.0.41",
+    "@types/node": "^10.3.2"
+  }
 }
