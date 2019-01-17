@@ -1,0 +1,19 @@
+{
+  "name": "haakily-cli",
+  "version": "1.0.0",
+  "description": "haakily cli to generate project backend and frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmahamadou001/haakily-cli.git"
+  },
+  "author": "Mahamadou Traore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tmahamadou001/haakily-cli/issues"
+  },
+  "homepage": "https://github.com/tmahamadou001/haakily-cli#readme"
+}
