@@ -36,53 +36,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var chalk = require("chalk");
-var parserData_1 = require("./parserData");
-var fileHelper_1 = require("./fileHelper");
-var shell = require('shelljs');
-var dirnames = {
-    haakily: "HAAKILY"
-};
-var ProcessData = /** @class */ (function () {
-    function ProcessData(fileHelper, parseData) {
-        if (fileHelper === void 0) { fileHelper = new fileHelper_1.FileHelper(); }
-        if (parseData === void 0) { parseData = new parserData_1.ParserData(); }
-        this.fileHelper = fileHelper;
-        this.parseData = parseData;
+var ParserData = /** @class */ (function () {
+    function ParserData() {
     }
-    ProcessData.prototype.init = function () {
+    ParserData.prototype.getFontEndOptions = function (data) {
         return __awaiter(this, void 0, void 0, function () {
-            var isDir;
+            var i;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, fileHelper_1.FileHelper.createDirectory(dirnames.haakily)];
-                    case 1:
-                        isDir = _a.sent();
-                        if (isDir) {
-                            console.log(chalk["default"].green(dirnames.haakily + " folder created !!"));
-                        }
-                        shell.cd(dirnames.haakily);
-                        if (shell.exec('ng new front-end --routing=false --style=scss').code == 0) {
-                            console.log(chalk["default"].green("Installation anfular Done !! "));
-                        }
-                        return [2 /*return*/];
+                //console.log(data.configuration);
+                try {
+                    for (i in data.configuration) {
+                        return [2 /*return*/, data.configuration];
+                    }
                 }
+                catch (err) {
+                    console.log(err);
+                }
+                return [2 /*return*/];
             });
         });
     };
-    ProcessData.prototype.add = function (data) {
-        console.log(chalk["default"].green("add"));
-        console.log(data);
-    };
-    ProcessData.prototype.update = function () {
-        console.log(chalk["default"].green("update"));
-    };
-    ProcessData.prototype.start = function () {
-        console.log(chalk["default"].green("start"));
-    };
-    ProcessData.prototype.restart = function () {
-        console.log(chalk["default"].green("restart"));
-    };
-    return ProcessData;
+    return ParserData;
 }());
-exports.ProcessData = ProcessData;
+exports.ParserData = ParserData;

@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
 import * as chalk from 'chalk';
-import * as dataJson from '../data/generate.json';
 
 export class ParserData {
   constructor() {
 
   }
 
-  parse(data: any): void {
-    
+  async getFontEndOptions(data: any): Promise<void> {
+    //console.log(data.configuration);
+    try {
+      for(var i in data.configuration) {
+        return data.configuration;
+     }
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
