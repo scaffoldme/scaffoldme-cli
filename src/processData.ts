@@ -4,6 +4,7 @@ import * as chalk from 'chalk';
 import * as dataJson from '../data/generate.json';
 
 import { FileHelper } from './fileHelper';
+var shell = require('shelljs');
 
 const dirnames = {
     haakily: "HAAKILY"
@@ -18,6 +19,17 @@ const dirnames = {
 
         console.log(chalk.default.green("init"));
         this.fileHelper.createDirectory(dirnames.haakily);
+
+        shell.cd(dirnames.haakily);
+        if (shell.exec('git clone https://github.com/gdi2290/angular-starter.git').code == 0) {
+            console.log(chalk.default.green("Git clone Angular Done !! "));
+            //shell.exit(1);
+        }
+        if (shell.exec('git clone https://github.com/klarkc/polymer-loopback-starter-kit.git').code == 0) {
+            console.log(chalk.default.green("Git clone Loopback Done !! "));
+            //shell.exit(1);
+        }
+        
     }
 
 
