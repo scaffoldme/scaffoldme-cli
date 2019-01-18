@@ -15,12 +15,13 @@ const dirnames = {
 
     }
   
-    init(): void {
+    async init(): Promise<void> {        
+        const isDir = await FileHelper.createDirectory(dirnames.haakily);        
+        if (isDir) {
+            console.log(chalk.default.green(`${dirnames.haakily} folder created !!`));
+        }
 
-        console.log(chalk.default.green("init"));
-        this.fileHelper.createDirectory(dirnames.haakily);
-
-        shell.cd(dirnames.haakily);
+     shell.cd(dirnames.haakily);
         if (shell.exec('git clone https://github.com/gdi2290/angular-starter.git').code == 0) {
             console.log(chalk.default.green("Git clone Angular Done !! "));
             //shell.exit(1);

@@ -35,37 +35,56 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 exports.__esModule = true;
-var chalk = require('chalk');
-var figlet = require('figlet');
-var program = require('commander');
-var os = require('os');
-var processCommand_1 = require("./src/processCommand");
-var run = function () { return __awaiter(_this, void 0, void 0, function () {
-    var processCommand;
-    return __generator(this, function (_a) {
-        try {
-            processCommand = new processCommand_1.ProcessCommand();
-            processCommand.run();
-            /* fs.mkdir(dirnames.haakily, (err: any) => {
-                if (err)
-                {
-                    console.log(err.message);
-                }else {
-                    console.log(`${dirnames.haakily} created !! `);
+var chalk = require("chalk");
+var fileHelper_1 = require("./fileHelper");
+var shell = require('shelljs');
+var dirnames = {
+    haakily: "HAAKILY"
+};
+var ProcessData = /** @class */ (function () {
+    function ProcessData(fileHelper) {
+        if (fileHelper === void 0) { fileHelper = new fileHelper_1.FileHelper(); }
+        this.fileHelper = fileHelper;
+    }
+    ProcessData.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var isDir;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fileHelper_1.FileHelper.createDirectory(dirnames.haakily)];
+                    case 1:
+                        isDir = _a.sent();
+                        if (isDir) {
+                            console.log(chalk["default"].green(dirnames.haakily + " folder created !!"));
+                        }
+                        shell.cd(dirnames.haakily);
+                        if (shell.exec('git clone https://github.com/gdi2290/angular-starter.git').code == 0) {
+                            console.log(chalk["default"].green("Git clone Angular Done !! "));
+                            //shell.exit(1);
+                        }
+                        if (shell.exec('git clone https://github.com/klarkc/polymer-loopback-starter-kit.git').code == 0) {
+                            console.log(chalk["default"].green("Git clone Loopback Done !! "));
+                            //shell.exit(1);
+                        }
+                        return [2 /*return*/];
                 }
-            }); */
-            /*  const processData = new ProcessData();
-         
-             processData.init(dataJson); */
-            //console.log(os.homedir());
-            //console.log(dataJson.configuration);
-        }
-        catch (err) {
-            console.log(err);
-        }
-        return [2 /*return*/];
-    });
-}); };
-run();
+            });
+        });
+    };
+    ProcessData.prototype.add = function (data) {
+        console.log(chalk["default"].green("add"));
+        console.log(data);
+    };
+    ProcessData.prototype.update = function () {
+        console.log(chalk["default"].green("update"));
+    };
+    ProcessData.prototype.start = function () {
+        console.log(chalk["default"].green("start"));
+    };
+    ProcessData.prototype.restart = function () {
+        console.log(chalk["default"].green("restart"));
+    };
+    return ProcessData;
+}());
+exports.ProcessData = ProcessData;

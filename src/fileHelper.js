@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,37 +34,35 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 exports.__esModule = true;
-var chalk = require('chalk');
-var figlet = require('figlet');
-var program = require('commander');
-var os = require('os');
-var processCommand_1 = require("./src/processCommand");
-var run = function () { return __awaiter(_this, void 0, void 0, function () {
-    var processCommand;
-    return __generator(this, function (_a) {
-        try {
-            processCommand = new processCommand_1.ProcessCommand();
-            processCommand.run();
-            /* fs.mkdir(dirnames.haakily, (err: any) => {
-                if (err)
-                {
-                    console.log(err.message);
-                }else {
-                    console.log(`${dirnames.haakily} created !! `);
-                }
-            }); */
-            /*  const processData = new ProcessData();
-         
-             processData.init(dataJson); */
-            //console.log(os.homedir());
-            //console.log(dataJson.configuration);
-        }
-        catch (err) {
-            console.log(err);
-        }
-        return [2 /*return*/];
-    });
-}); };
-run();
+var fs = require("fs");
+var os = require("os");
+var FileHelper = /** @class */ (function () {
+    function FileHelper() {
+    }
+    FileHelper.createDirectory = function (name) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            fs.mkdir(name, function (err) {
+                                if (err)
+                                    reject(err);
+                                else
+                                    resolve();
+                            });
+                            return [2 /*return*/];
+                        });
+                    }); }).then(function () { return true; }, function (err) {
+                        if (err.code == "EEXIST")
+                            return false;
+                        else
+                            throw err;
+                    })];
+            });
+        });
+    };
+    return FileHelper;
+}());
+exports.FileHelper = FileHelper;
