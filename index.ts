@@ -4,18 +4,10 @@ const chalk = require('chalk');
 const figlet = require('figlet');
 const program = require('commander');
 import * as dataJson from './data/generate.json';
-var fs = require('fs');
 const os = require('os');
 
 
 import { ProcessCommand } from './src/processCommand';
-
-
-//clear();
-
-const dirnames = {
-  haakily: "HAAKILY"
-};
 
 const run = async () => {
   try {
