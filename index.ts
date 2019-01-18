@@ -1,36 +1,51 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk');
-const clear = require('clear');
 const figlet = require('figlet');
 const program = require('commander');
+import * as dataJson from './data/generate.json';
+var fs = require('fs');
+const os = require('os');
 
-clear();
-console.log(
-  chalk.yellow(figlet.textSync('HAAKILY-CLI', { horizontalLayout: 'full' }))
-);
+
+import { ProcessCommand } from './src/processCommand';
+
+
+//clear();
+
+const dirnames = {
+  haakily: "HAAKILY"
+};
 
 const run = async () => {
   try {
 
-    program
-      .version('0.0.1')
-      .description("HAAKILY CLI")
-      .option('-i, --init', 'initialization of the project')
-      .option('-a, --add', 'Add new .....')
-      .option('-u, --update', 'Update')
-      .option('-s, --start', 'Start.....')
-      .option('-r, --restart', 'Restart......')
-      .option('-e, --exit', 'Exit......')
-      .parse(process.argv);
+    const processCommand = new ProcessCommand();
+    processCommand.run();
 
-      if (!process.argv.slice(2).length) {
-        program.outputHelp();
-      }
+    /* fs.mkdir(dirnames.haakily, (err: any) => {
+        if (err)
+        {
+            console.log(err.message);
+        }else {
+            console.log(`${dirnames.haakily} created !! `);
+        }
+    }); */
+
+   /*  const processData = new ProcessData();
+
+    processData.init(dataJson); */
+
+    //console.log(os.homedir());
+
+    //console.log(dataJson.configuration);
+
 
   } catch (err) {
     console.log(err);
   }
 };
+
+
 
 run();
