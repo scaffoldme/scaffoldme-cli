@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -36,63 +36,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var chalk = require("chalk");
-var parserData_1 = require("./parserData");
-var helper_1 = require("./helper");
 var shell = require("shelljs");
-var angular_1 = require("./generator/angular");
-var loopback_1 = require("./generator/loopback");
-var config_1 = require("./config");
-var ProcessData = /** @class */ (function () {
-    function ProcessData(fileHelper, parseData, angular, loopback) {
-        if (fileHelper === void 0) { fileHelper = new helper_1.Helper(); }
-        if (parseData === void 0) { parseData = new parserData_1.ParserData(); }
-        if (angular === void 0) { angular = new angular_1.Angular(); }
-        if (loopback === void 0) { loopback = new loopback_1.Loopback(); }
-        this.fileHelper = fileHelper;
-        this.parseData = parseData;
-        this.angular = angular;
-        this.loopback = loopback;
+var Loopback = /** @class */ (function () {
+    function Loopback() {
     }
-    ProcessData.prototype.init = function () {
+    Loopback.prototype.generator = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var isDir;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, helper_1.Helper.createDirectory(config_1.dirnames.BASE_DIR)];
-                    case 1:
-                        isDir = _a.sent();
-                        if (isDir) {
-                            console.log(chalk["default"].green(config_1.dirnames.BASE_DIR + " folder created !!"));
-                        }
-                        shell.cd(config_1.dirnames.BASE_DIR);
-                        console.log(chalk["default"].yellow("Installation " + config_1.Technologies.FRONT_END + " .... !! "));
-                        return [4 /*yield*/, this.angular.generator(config_1.Technologies.FRONT_END, "scss", false)];
-                    case 2:
-                        _a.sent();
-                        console.log(chalk["default"].yellow("Installation " + config_1.Technologies.BACK_END + " .... !! "));
-                        return [4 /*yield*/, this.loopback.generator()];
-                    case 3:
-                        _a.sent();
-                        console.log(chalk["default"].green('Process init end'));
-                        return [2 /*return*/];
-                }
+                shell.mkdir('back-end');
+                return [2 /*return*/];
             });
         });
     };
-    ProcessData.prototype.add = function (data) {
-        console.log(chalk["default"].green("add"));
-        console.log(data);
-    };
-    ProcessData.prototype.update = function () {
-        console.log(chalk["default"].green("update"));
-    };
-    ProcessData.prototype.start = function () {
-        console.log(chalk["default"].green("start"));
-    };
-    ProcessData.prototype.restart = function () {
-        console.log(chalk["default"].green("restart"));
-    };
-    return ProcessData;
+    return Loopback;
 }());
-exports.ProcessData = ProcessData;
+exports.Loopback = Loopback;

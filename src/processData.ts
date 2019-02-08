@@ -1,56 +1,35 @@
 #!/usr/bin/env node
 
 import * as chalk from "chalk";
-import * as dataJson from "../data/generate.json";
 import { ParserData } from "./parserData";
-var fs = require("fs");
-const jsonfile = require("jsonfile");
 
-import { FileHelper } from "./fileHelper";
+import { Helper } from "./helper";
 var shell = require("shelljs");
-var userHome = require('user-home');
-
-const dirnames = {
-  haakily: "HAAKILY"
-};
-
-export interface packageJSON {
-  toto: string;
-  scripts: any;
-}
+import { Angular } from './generator/angular';
+import { Loopback } from './generator/loopback';
+import { dirnames, Technologies } from "./config";
 
 export class ProcessData {
   constructor(
-    public fileHelper: FileHelper = new FileHelper(),
-    public parseData: ParserData = new ParserData()
+    public fileHelper: Helper = new Helper(),
+    public parseData: ParserData = new ParserData(),
+    public angular: Angular = new Angular(),
+    public loopback: Loopback = new Loopback()
   ) {}
 
   async init(): Promise<void> {
-    shell.exec('./scripts/installed-dependencies.sh');
-    const file = "./package.json";
-     const isDir = await FileHelper.createDirectory(dirnames.haakily);        
+     const isDir = await Helper.createDirectory(dirnames.BASE_DIR);
         if (isDir) {
-            console.log(chalk.default.green(`${dirnames.haakily} folder created !!`));
+            console.log(chalk.default.green(`${dirnames.BASE_DIR} folder created !!`));
         }
-        shell.cd(dirnames.haakily);
+        shell.cd(dirnames.BASE_DIR);
+        console.log(chalk.default.yellow(`Installation ${ Technologies.FRONT_END} .... !! `));
+        await this.angular.generator(Technologies.FRONT_END, "scss", false);
 
-        /* if (shell.exec('ng new front-end --routing=false --style=scss').code == 0) {
-            console.log(chalk.default.green("Installation angular Done !! "));
-            
-            shell.cd('front-end');
+        console.log(chalk.default.yellow(`Installation ${ Technologies.BACK_END} .... !! `));
+        await this.loopback.generator();
 
-            /* add command to create all model and service in angular project */
-            /*const packageJSON: packageJSON = await jsonfile.readFile(file);
-            packageJSON.scripts.haakily =
-            "openapi-generator generate -i ./haakily.json -g typescript-angular -o generated-sources/openapi --additional-properties='ngVersion=6.1.7'";
-            await jsonfile.writeFile(file, packageJSON);
-            
-        } */
-        
-        /***Installation Back-end Loopback */
-        //shell.mkdir('-p', 'back-end');
-
-        console.log(chalk.default.green('end init'));
+        console.log(chalk.default.green('Process init end'));
   }
 
   add(data: any): void {
