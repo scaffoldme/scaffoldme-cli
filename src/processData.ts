@@ -8,6 +8,7 @@ const jsonfile = require("jsonfile");
 
 import { FileHelper } from "./fileHelper";
 var shell = require("shelljs");
+var userHome = require('user-home');
 
 const dirnames = {
   haakily: "HAAKILY"
@@ -25,28 +26,31 @@ export class ProcessData {
   ) {}
 
   async init(): Promise<void> {
+    shell.exec('./scripts/installed-dependencies.sh');
     const file = "./package.json";
      const isDir = await FileHelper.createDirectory(dirnames.haakily);        
         if (isDir) {
             console.log(chalk.default.green(`${dirnames.haakily} folder created !!`));
         }
-
         shell.cd(dirnames.haakily);
-        if (shell.exec('ng new front-end --routing=false --style=scss').code == 0) {
+
+        /* if (shell.exec('ng new front-end --routing=false --style=scss').code == 0) {
             console.log(chalk.default.green("Installation angular Done !! "));
             
             shell.cd('front-end');
 
             /* add command to create all model and service in angular project */
-            const packageJSON: packageJSON = await jsonfile.readFile(file);
+            /*const packageJSON: packageJSON = await jsonfile.readFile(file);
             packageJSON.scripts.haakily =
             "openapi-generator generate -i ./haakily.json -g typescript-angular -o generated-sources/openapi --additional-properties='ngVersion=6.1.7'";
             await jsonfile.writeFile(file, packageJSON);
             
-        }
-    /* if (shell.exec('git clone https://github.com/klarkc/polymer-loopback-starter-kit.git').code == 0) {
-            console.log(chalk.default.green("Git clone Loopback Done !! "));
         } */
+        
+        /***Installation Back-end Loopback */
+        //shell.mkdir('-p', 'back-end');
+
+        console.log(chalk.default.green('end init'));
   }
 
   add(data: any): void {

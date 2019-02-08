@@ -42,6 +42,7 @@ var fs = require("fs");
 var jsonfile = require("jsonfile");
 var fileHelper_1 = require("./fileHelper");
 var shell = require("shelljs");
+var userHome = require('user-home');
 var dirnames = {
     haakily: "HAAKILY"
 };
@@ -54,10 +55,11 @@ var ProcessData = /** @class */ (function () {
     }
     ProcessData.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var file, isDir, packageJSON;
+            var file, isDir;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        shell.exec('./scripts/installed-dependencies.sh');
                         file = "./package.json";
                         return [4 /*yield*/, fileHelper_1.FileHelper.createDirectory(dirnames.haakily)];
                     case 1:
@@ -66,19 +68,22 @@ var ProcessData = /** @class */ (function () {
                             console.log(chalk["default"].green(dirnames.haakily + " folder created !!"));
                         }
                         shell.cd(dirnames.haakily);
-                        if (!(shell.exec('ng new front-end --routing=false --style=scss').code == 0)) return [3 /*break*/, 4];
-                        console.log(chalk["default"].green("Installation angular Done !! "));
-                        shell.cd('front-end');
-                        return [4 /*yield*/, jsonfile.readFile(file)];
-                    case 2:
-                        packageJSON = _a.sent();
+                        /* if (shell.exec('ng new front-end --routing=false --style=scss').code == 0) {
+                            console.log(chalk.default.green("Installation angular Done !! "));
+                            
+                            shell.cd('front-end');
+                
+                            /* add command to create all model and service in angular project */
+                        /*const packageJSON: packageJSON = await jsonfile.readFile(file);
                         packageJSON.scripts.haakily =
-                            "openapi-generator generate -i ./haakily.json -g typescript-angular -o generated-sources/openapi --additional-properties='ngVersion=6.1.7'";
-                        return [4 /*yield*/, jsonfile.writeFile(file, packageJSON)];
-                    case 3:
-                        _a.sent();
-                        _a.label = 4;
-                    case 4: return [2 /*return*/];
+                        "openapi-generator generate -i ./haakily.json -g typescript-angular -o generated-sources/openapi --additional-properties='ngVersion=6.1.7'";
+                        await jsonfile.writeFile(file, packageJSON);
+                        
+                    } */
+                        /***Installation Back-end Loopback */
+                        //shell.mkdir('-p', 'back-end');
+                        console.log(chalk["default"].green('end init'));
+                        return [2 /*return*/];
                 }
             });
         });
