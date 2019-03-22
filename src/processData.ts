@@ -8,6 +8,9 @@ var shell = require("shelljs");
 import { Angular } from './generator/angular';
 import { Loopback } from './generator/loopback';
 import { dirnames, Technologies } from "./config";
+const fs = require('fs')
+
+const path = './scafoldme.json'
 
 export class ProcessData {
   constructor(
@@ -18,7 +21,16 @@ export class ProcessData {
   ) {}
 
   async init(): Promise<void> {
-     const isDir = await Helper.createDirectory(dirnames.BASE_DIR);
+    fs.access(path, fs.F_OK, (err:any) => {
+      if (err) {
+        console.log(chalk.default.red("Le fichier scafoldme.json est introuvable"));
+        // console.error(err)
+        return
+      }
+
+      //file exists
+    })
+     /* const isDir = await Helper.createDirectory(dirnames.BASE_DIR);
         if (isDir) {
             console.log(chalk.default.green(`${dirnames.BASE_DIR} folder created !!`));
         }
@@ -29,7 +41,7 @@ export class ProcessData {
         console.log(chalk.default.yellow(`Installation ${ Technologies.BACK_END} .... !! `));
         await this.loopback.generator();
 
-        console.log(chalk.default.green('Process init end'));
+        console.log(chalk.default.green('Process init end')); */
   }
 
   add(data: any): void {

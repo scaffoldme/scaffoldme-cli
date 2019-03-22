@@ -10,7 +10,7 @@ const { prompt } = require('inquirer');
 
 export class ProcessCommand {
   constructor(public processData: ProcessData = new ProcessData()) {
-    
+
   }
 
   run(): void {
@@ -22,8 +22,8 @@ export class ProcessCommand {
         { type: 'confirm', name: 'prefer1', message: 'Do you prefer your 1?', default: false },
         { type: 'confirm', name: 'prefer2', message: 'Do you prefer your 2?', default: false },
     ];
-      
-    program 
+
+    program
     .version('1.0.0')
     .description('HAAKILY CLI')
 
@@ -33,6 +33,7 @@ export class ProcessCommand {
     .command('init')
     .alias('i')
     .description('Init ')
+    .parse(process.argv)
     .action(() => this.processData.init());
 
     // Add Command
@@ -71,6 +72,6 @@ export class ProcessCommand {
         )
         );
         program.outputHelp();
-      } 
+      }
   }
 }
