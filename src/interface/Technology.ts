@@ -16,7 +16,7 @@ export enum TechnologyName {
 
 export interface Technology {
   id?: string;
-  name?: TechnologyName;
+  name: TechnologyName;
   logo?: string;
   availableVersions?: Array<Version>;
   selectedVersion?: Version;

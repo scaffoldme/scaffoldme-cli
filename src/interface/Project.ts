@@ -1,9 +1,22 @@
 import { Environment } from './Environment';
 
-interface Project {
+export interface Project {
   id?: string;
-  name?: string;
+  name: string;
   description?: string;
   logo?: string;
-  environments?: Array<Environment>;
+  environments: Array<Environment>;
 }
+
+
+/* export class Projects implements Project {
+  public name: string = "";
+
+  public get Name() {
+      return this.name;
+  }
+
+  public set Name(value) {
+      this.name = value;
+  }
+} */

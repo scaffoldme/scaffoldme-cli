@@ -13,7 +13,7 @@
     "url": "git+https://github.com/tmahamadou001/haakily-cli.git"
   },
   "bin": {
-    "haakyli-cli": "./lib/index.js"
+    "scafoldme": "./lib/index.js"
   },
   "author": "Mahamadou Traore",
   "license": "MIT",

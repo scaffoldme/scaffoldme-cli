@@ -1,5 +1,5 @@
 export const dirnames = {
-  BASE_DIR: 'HAAKILY',
+  BASE_DIR: 'SCAFOLDME',
   FILE: 'package.json'
 };
 

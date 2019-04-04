@@ -13,8 +13,8 @@ export interface Environment {
   name?: string;
   description?: string;
   environmentType: EnvironmentType;
-  framework?: Technology;
-  style?: Technology;
+  framework: Technology;
+  style: Technology;
   typing?: Technology;
   modules?: Array<Technology>;
 }
