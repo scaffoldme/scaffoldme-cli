@@ -50,20 +50,19 @@ export class Helper {
    * @param environment TypeEnvironment
    */
   async getFrameworkAndInstall(environment : Environment) {
-    console.log("NAME " + environment.framework.name);
     switch (environment.framework.name) {
       case "Angular":
-        console.log("Angularrrrrr");
+        console.log(environment.framework.name);
         this.angular.generator(environment);
         break;
 
       case "Express":
-        console.log("Express");
+        console.log(environment.framework.name);
         this.express.generator(environment)
         break;
 
       case "React":
-        console.log("React");
+        console.log(environment.framework.name);
         this.react.generator(environment)
         break;
     }

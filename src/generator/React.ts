@@ -5,7 +5,7 @@ import * as chalk from "chalk";
 
 export class React implements Framework {
   async generator(environment: Environment) {
-    console.log(chalk.default.yellowBright(`Installation du Framework ${environment.framework.name}`));
+    console.log(chalk.default.yellowBright(`Installation du Framework ${environment.framework.name} ( ${environment.environmentType} ) `));
     shell.mkdir('-p',`${environment.environmentType}`);
     /* if (
       shell.exec(

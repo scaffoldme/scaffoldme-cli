@@ -5,15 +5,15 @@ import * as chalk from "chalk";
 
 export class Angular implements Framework {
   async generator(environment: Environment) {
-    console.log(chalk.default.green(`Installation du  ${environment.environmentType}`));
+    console.log(chalk.default.yellowBright(`Installation du Framework ${environment.framework.name} ( ${environment.environmentType} )`));
     if (
       shell.exec(
-        `ng new ${environment.environmentType} --routing=true --style=${
+        `ng new ${environment.environmentType} --routing=false --style=${
           environment.style.name ? environment.style.name : "css"
         }`
       ).code == 0
     ) {
-      console.log(chalk.default.green(`Installation ${name} Done !! `));
+      console.log(chalk.default.green(`Installation ${environment.framework.name} Done !! `));
     }
 
     /*console.log(chalk.default.yellow(`Updating package.json `));
