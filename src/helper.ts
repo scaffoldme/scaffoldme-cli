@@ -1,15 +1,20 @@
 
 import { Environment } from './interface/Environment';
 import { Angular } from "./generator/angular";
+import { React } from "./generator/React";
+import { Express } from "./generator/Express";
 var fs = require("fs");
 const os = require("os");
 import * as chalk from "chalk";
 import { TechnologyName } from "./interface/Technology";
 var shell = require("shelljs");
 
+
 export class Helper {
   constructor(
-    public angular: Angular = new Angular()
+    public angular: Angular = new Angular(),
+    public react: React = new React(),
+    public express: Express = new Express()
   ) {}
 
   /**
@@ -45,13 +50,21 @@ export class Helper {
    * @param environment TypeEnvironment
    */
   async getFrameworkAndInstall(environment : Environment) {
-
+    console.log("NAME " + environment.framework.name);
     switch (environment.framework.name) {
       case "Angular":
+        console.log("Angularrrrrr");
         this.angular.generator(environment);
         break;
+
+      case "Express":
+        console.log("Express");
+        this.express.generator(environment)
+        break;
+
       case "React":
-        console.log("reacttttttttttttttttt");
+        console.log("React");
+        this.react.generator(environment)
         break;
     }
   }

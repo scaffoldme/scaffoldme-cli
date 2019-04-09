@@ -11,7 +11,9 @@ export enum TechnologyType {
 export enum TechnologyName {
   React = "React",
   Angular = "Angular",
-  VueJs = "VueJs"
+  VueJs = "VueJs",
+  Express = "Express",
+  Loopback = "Loopback"
 }
 
 export interface Technology {

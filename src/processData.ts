@@ -35,7 +35,7 @@ export class ProcessData {
       }
       const projectJSON: Project = await jsonfile.readFile(`${path}`);
       console.log(
-        chalk.default.yellow(`Initialisation : ${projectJSON.name}`)
+        chalk.default.greenBright("Initialisation du projet : " + (projectJSON.name ? projectJSON.name : "Scafoldme Project"))
       );
 
       projectJSON.environments.forEach(item => {
