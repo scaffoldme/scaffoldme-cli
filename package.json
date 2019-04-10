@@ -1,7 +1,7 @@
 {
-  "name": "haakily-cli",
+  "name": "scaffoldme-cli",
   "version": "1.0.0",
-  "description": "haakily cli to generate project backend and frontend",
+  "description": "scaffoldme cli to generate project backend and frontend",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/tmahamadou001/haakily-cli.git"
   },
   "bin": {
-    "scafoldme": "./lib/index.js"
+    "scaffoldme": "./lib/index.js"
   },
   "author": "Mahamadou Traore",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "jsonfile": "^5.0.0",
     "ora": "^3.4.0",
     "shelljs": "^0.8.3",
+    "terminal-link": "^1.3.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   },

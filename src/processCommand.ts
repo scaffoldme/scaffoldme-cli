@@ -25,7 +25,7 @@ export class ProcessCommand {
 
     program
     .version('1.0.0')
-    .description('HAAKILY CLI')
+    .description('SCAFFOLDME CLI')
 
 
     // Init Command
@@ -64,7 +64,7 @@ export class ProcessCommand {
         clear();
         console.log(
         chalk.yellow(
-            figlet.textSync("HAAKILY-CLI", {
+            figlet.textSync("SCAFFOLDME-CLI", {
             font: "Epic",
             horizontalLayout: "default",
             verticalLayout: "default"

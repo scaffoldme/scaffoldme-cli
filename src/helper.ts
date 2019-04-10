@@ -1,4 +1,4 @@
-
+import { Loopback } from './generator/loopback';
 import { Environment } from './interface/Environment';
 import { Angular } from "./generator/angular";
 import { React } from "./generator/React";
@@ -14,7 +14,8 @@ export class Helper {
   constructor(
     public angular: Angular = new Angular(),
     public react: React = new React(),
-    public express: Express = new Express()
+    public express: Express = new Express(),
+    public loopback: Loopback = new Loopback()
   ) {}
 
   /**
@@ -60,6 +61,11 @@ export class Helper {
         console.log(environment.framework.name);
         this.express.generator(environment)
         break;
+
+      case "Loopback":
+      console.log(environment.framework.name);
+      //this.loopback.generator(environment)
+      break;
 
       case "React":
         console.log(environment.framework.name);
