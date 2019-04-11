@@ -1,6 +1,6 @@
 import { Technology } from './Technology';
 
-enum EnvironmentType {
+export enum EnvironmentType {
   FrontEnd = "frontend",
   Api = "api",
   Service = "service",

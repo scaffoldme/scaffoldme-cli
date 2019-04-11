@@ -6,6 +6,8 @@ const path = "scafoldme.json";
 import { Project } from "./interface/Project";
 const jsonfile = require("jsonfile");
 
+var shell = require("shelljs");
+
 export class ProcessData {
   constructor(
     public fileHelper: Helper = new Helper(),
@@ -21,23 +23,11 @@ export class ProcessData {
         return;
       }
       const projectJSON: Project = await jsonfile.readFile(`${path}`);
-      watcher('🕓   Initialisation du projet : ' + (projectJSON.name ? projectJSON.name : 'Scafoldme Project'));
-      projectJSON.environments.forEach(item => {
-        if (!item.environmentType) {
-          console.log(
-            chalk.default.red("Erreur ! Le type d'environnement n'est pas defini")
-          );
-          return;
-        }
-        if (!item.framework) {
-          console.log(
-            chalk.default.red("Erreur ! Le Framework n'est pas defini")
-          );
-          return;
-        }
-         this.helper.getFrameworkAndInstall(item);
-
-      });
+      shell.echo('  ⏳  Initialisation du projet : ' + (projectJSON.name ? projectJSON.name : 'Scafoldme Project'));
+      shell.echo('');
+      shell.echo('  🕓  The setup process can take few minutes.');
+      shell.echo('');
+      await this.helper.getFrameworkAndInstall(projectJSON.environments);
 
     });
   }

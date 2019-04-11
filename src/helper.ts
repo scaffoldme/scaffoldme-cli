@@ -47,11 +47,58 @@ export class Helper {
    * Crée l'environnement en fonction du type
    * @param environment TypeEnvironment
    */
-  async getFrameworkAndInstall(environment : Environment) {
+  async getFrameworkAndInstall(environments : Environment[]) {
+
+    for (let index = 0; index < environments.length; index++) {
+      const environment = environments[index];
+
+      switch (environment.framework.name) {
+        case "Angular":
+          const angular =   this.angular.getListTask(environment);
+          await angular.run();
+          break;
+
+        case "Express":
+          console.log(environment.framework.name);
+          this.express.generator(environment)
+          break;
+
+        case "Loopback":
+        const loopback = this.loopback.getListTask(environment)
+        await loopback.run();
+        break;
+
+        case "React":
+          console.log(environment.framework.name);
+          this.react.generator(environment)
+          break;
+      }
+
+    }
+
+/*     const angular = this.angular.getListTask(environment[0])
+    await angular.run();
+
+    const loopback = this.angular.getListTask(environment[1])
+    await loopback.run(); */
+
+  /* if (environment.framework.name == 'Angular') {
+    console.log(environment.framework.name);
+    await  this.angular.generator(environment);
+  }
+
+  console.log('helper -------------');
+
+  if (environment.framework.name == 'Loopback') {
+    console.log(environment.framework.name);
+    await  this.loopback.generator(environment);
+  } */
+}
+/*
     switch (environment.framework.name) {
       case "Angular":
         console.log(environment.framework.name);
-        this.angular.generator(environment);
+       await  this.angular.generator(environment);
         break;
 
       case "Express":
@@ -61,7 +108,7 @@ export class Helper {
 
       case "Loopback":
       console.log(environment.framework.name);
-      this.loopback.generator(environment)
+      await this.loopback.generator(environment)
       break;
 
       case "React":
@@ -69,5 +116,5 @@ export class Helper {
         this.react.generator(environment)
         break;
     }
-  }
+  } */
 }
