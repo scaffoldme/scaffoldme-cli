@@ -39,7 +39,7 @@ export class Loopback {
 
       ];
 
-      return new Listr(tasks);
+    return new Listr(tasks);
 
 
 

@@ -37,7 +37,7 @@ export class ProcessCommand {
     .action(() => this.processData.init());
 
     // Add Command
-    program
+    /* program
     .command('add')
     .alias('a')
     .description('add new')
@@ -47,14 +47,14 @@ export class ProcessCommand {
         .then( (answers: any) => {
             this.processData.add(answers)
         })
-      });
+      }); */
 
     // start Command
-    program
+    /* program
     .command('start')
     .alias('s')
     .description('start container and server')
-    .action(() => this.processData.start());
+    .action(() => this.processData.start()); */
 
 
     //start all command

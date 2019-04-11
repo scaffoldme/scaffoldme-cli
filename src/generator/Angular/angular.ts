@@ -9,10 +9,8 @@ import Listr from 'listr';
 
 
 export class Angular{
+  
   getListTask(environment: Environment) : Listr {
-    /* watcher(`📦  Installation du Framework ${environment.framework.name}`,`ng new ${environment.environmentType} --routing=false --style=${
-      environment.style.name ? environment.style.name : "css"
-    }`); */
 
     console.log(chalk.default.bgCyan(`${environment.framework.name}`));
     shell.echo('');
@@ -21,25 +19,28 @@ export class Angular{
       {
         title: `🔧  Installation du Framework`,
         task: async () =>
-            { await execa('git', ['clone', `https://github.com/scaffoldme/angular-starter.git`, `${environment.environmentType}`]) }
+            execa('git', ['clone', `https://github.com/scaffoldme/angular-starter.git`, `${environment.environmentType}`])
             //.catch(() => task.skip())
       },
       {
         title: '📦  update Dependencies',
         task: async () =>
-            { await execa('npm', [`install`, 'ajv', '--save']) }
+            execa('npm', [`install`, 'ajv', '--save'])
       },
       {
         title: '📦  Updates npm packages',
-        task: async () => await execa.shell(`cd ${environment.environmentType} && npm install`)
+        task: async () =>
+            execa.shell(`cd ${environment.environmentType} && npm install`)
       },
       {
         title: '🐋  Build docker image',
-        task: () => execa.shell(`cd ${environment.environmentType} && docker build -t angular-app:v1 .`)
+        task: () => 
+            execa.shell(`cd ${environment.environmentType} && docker build -t angular-app:v1 .`)
       },
       {
         title: `🐋  Run docker container ${environment.environmentType}`,
-        task: () => execa.shell('docker run -p 4200:80 -d angular-app:v1')
+        task: () => 
+            execa.shell('docker run -p 4200:80 -d angular-app:v1')
       }
 
     ];

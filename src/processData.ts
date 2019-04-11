@@ -28,7 +28,6 @@ export class ProcessData {
       shell.echo('  🕓  The setup process can take few minutes.');
       shell.echo('');
       await this.helper.getFrameworkAndInstall(projectJSON.environments);
-
     });
   }
 

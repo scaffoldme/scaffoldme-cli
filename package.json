@@ -23,6 +23,7 @@
   "homepage": "https://github.com/tmahamadou001/haakily-cli#readme",
   "dependencies": {
     "@types/listr": "^0.13.0",
+    "boxen": "^3.1.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "commander": "^2.19.0",

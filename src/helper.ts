@@ -5,6 +5,7 @@ import { React } from "./generator/React";
 import { Express } from "./generator/Express";
 var fs = require("fs");
 var shell = require("shelljs");
+const boxen = require('boxen');
 
 
 export class Helper {
@@ -56,6 +57,7 @@ export class Helper {
         case "Angular":
           const angular =   this.angular.getListTask(environment);
           await angular.run();
+          await console.log(boxen('Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container image name is : angular-app:v1', {padding: 1, margin: 1, borderStyle: 'double'}));
           break;
 
         case "Express":
@@ -66,6 +68,7 @@ export class Helper {
         case "Loopback":
         const loopback = this.loopback.getListTask(environment)
         await loopback.run();
+        await console.log(boxen('Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container image name is : loopback-app:v1', {padding: 1, margin: 1, borderStyle: 'double'}));
         break;
 
         case "React":
@@ -75,46 +78,5 @@ export class Helper {
       }
 
     }
-
-/*     const angular = this.angular.getListTask(environment[0])
-    await angular.run();
-
-    const loopback = this.angular.getListTask(environment[1])
-    await loopback.run(); */
-
-  /* if (environment.framework.name == 'Angular') {
-    console.log(environment.framework.name);
-    await  this.angular.generator(environment);
-  }
-
-  console.log('helper -------------');
-
-  if (environment.framework.name == 'Loopback') {
-    console.log(environment.framework.name);
-    await  this.loopback.generator(environment);
-  } */
 }
-/*
-    switch (environment.framework.name) {
-      case "Angular":
-        console.log(environment.framework.name);
-       await  this.angular.generator(environment);
-        break;
-
-      case "Express":
-        console.log(environment.framework.name);
-        this.express.generator(environment)
-        break;
-
-      case "Loopback":
-      console.log(environment.framework.name);
-      await this.loopback.generator(environment)
-      break;
-
-      case "React":
-        console.log(environment.framework.name);
-        this.react.generator(environment)
-        break;
-    }
-  } */
 }
