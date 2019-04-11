@@ -1,23 +1,14 @@
 import * as chalk from "chalk";
-import { ParserData } from "./parserData";
 import { Helper } from "./helper";
-import { Angular } from "./generator/angular";
-import { Loopback } from "./generator/loopback";
 import { watcher } from "../utils/watcher";
 const fs = require("fs");
-
 const path = "scafoldme.json";
-
 import { Project } from "./interface/Project";
-import { Environment } from './interface/Environment';
 const jsonfile = require("jsonfile");
 
 export class ProcessData {
   constructor(
     public fileHelper: Helper = new Helper(),
-    public parseData: ParserData = new ParserData(),
-    public angular: Angular = new Angular(),
-    public loopback: Loopback = new Loopback(),
     public helper: Helper = new Helper()
   ) {}
 

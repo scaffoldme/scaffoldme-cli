@@ -1,12 +1,9 @@
 import { Loopback } from './generator/loopback';
 import { Environment } from './interface/Environment';
-import { Angular } from "./generator/angular";
+import { Angular } from "./generator/Angular/angular";
 import { React } from "./generator/React";
 import { Express } from "./generator/Express";
 var fs = require("fs");
-const os = require("os");
-import * as chalk from "chalk";
-import { TechnologyName } from "./interface/Technology";
 var shell = require("shelljs");
 
 
@@ -64,7 +61,7 @@ export class Helper {
 
       case "Loopback":
       console.log(environment.framework.name);
-      //this.loopback.generator(environment)
+      this.loopback.generator(environment)
       break;
 
       case "React":
