@@ -1,1 +1,1 @@
-# haakily-cli
+# scaffoldme-cli
