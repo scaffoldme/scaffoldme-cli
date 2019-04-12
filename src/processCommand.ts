@@ -32,7 +32,7 @@ export class ProcessCommand {
     program
     .command('init')
     .alias('i')
-    .description('Init ')
+    .description("Initialisation des environnements & deploiement des machines docker ")
     .parse(process.argv)
     .action(() => this.processData.init());
 
@@ -51,10 +51,29 @@ export class ProcessCommand {
 
     // start Command
     /* program
-    .command('start')
+    .command('start <container_name>')
     .alias('s')
-    .description('start container and server')
-    .action(() => this.processData.start()); */
+    .description("lancer un container") */
+    // .action(() => this.processData.start(container_name, args));
+
+
+    program
+    .command('start <container_name>')
+    .alias('str')
+    //.option('-f, --force', 'Remove recursively')
+    .description("lancer un container")
+    .action((container_name: string) => this.processData.start(container_name));
+
+    program
+    .command('stop <container_name>')
+    .alias('stp')
+    //.option('-f, --force', 'Remove recursively')
+    .description("arreter un container")
+    .action((container_name: string) => this.processData.stop(container_name));
+
+    /* .action(function (container_name:any) {
+      console.log('remove ' + container_name)
+    }) */
 
 
     //start all command

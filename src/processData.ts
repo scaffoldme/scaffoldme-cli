@@ -8,6 +8,9 @@ const jsonfile = require("jsonfile");
 
 var shell = require("shelljs");
 
+const execa = require('execa');
+import Listr from 'listr';
+
 export class ProcessData {
   constructor(
     public fileHelper: Helper = new Helper(),
@@ -41,8 +44,24 @@ export class ProcessData {
     console.log(chalk.default.green("update"));
   }
 
-  start(): void {
-    console.log(chalk.default.green("start"));
+  start(container_name:string): void {
+    new Listr([
+      {
+        title: `Start docker container ${container_name}`,
+        task: () => execa.shell(`docker start ${container_name}`)
+      }
+    ]).run();
+    //console.log(chalk.default.green("start" + container_name));
+  }
+
+  stop(container_name:string): void {
+    new Listr([
+      {
+        title: `Stop docker container ${container_name}`,
+        task: () => execa.shell(`docker stop ${container_name}`)
+      }
+    ]).run();
+    //console.log(chalk.default.green("start" + container_name));
   }
 
   restart(): void {

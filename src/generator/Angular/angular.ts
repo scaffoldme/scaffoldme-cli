@@ -9,7 +9,7 @@ import Listr from 'listr';
 
 
 export class Angular{
-  
+
   getListTask(environment: Environment) : Listr {
 
     console.log(chalk.default.bgCyan(`${environment.framework.name}`));
@@ -34,13 +34,13 @@ export class Angular{
       },
       {
         title: '🐋  Build docker image',
-        task: () => 
+        task: () =>
             execa.shell(`cd ${environment.environmentType} && docker build -t angular-app:v1 .`)
       },
       {
         title: `🐋  Run docker container ${environment.environmentType}`,
-        task: () => 
-            execa.shell('docker run -p 4200:80 -d angular-app:v1')
+        task: () =>
+            execa.shell('docker run --name angular_app -p 4200:80 -d angular-app:v1')
       }
 
     ];

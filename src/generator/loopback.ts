@@ -34,7 +34,7 @@ export class Loopback {
         },
         {
           title: `🐋  Run docker container`,
-          task: () => execa.shell('docker run -p 3000:3000 -d loopback-app:v1')
+          task: () => execa.shell('docker run --name loopback_app -p 3000:3000 -d loopback-app:v1')
         }
 
       ];
