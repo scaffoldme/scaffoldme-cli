@@ -23,9 +23,10 @@ export class ProcessData {
         return;
       }
       const projectJSON: Project = await jsonfile.readFile(`${path}`);
-      shell.echo('  ⏳  Initialisation du projet : ' + (projectJSON.name ? projectJSON.name : 'Scafoldme Project'));
       shell.echo('');
-      shell.echo('  🕓  The setup process can take few minutes.');
+      console.log(chalk.default.yellowBright('  ⏳  Initialisation du projet : ' + (projectJSON.name ? projectJSON.name : 'Scafoldme Project')));
+      shell.echo('');
+      shell.echo("  🕓  Prenez un café ☕ et patientez pendant l'installation ... ");
       shell.echo('');
       await this.helper.getFrameworkAndInstall(projectJSON.environments);
     });
