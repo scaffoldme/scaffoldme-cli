@@ -65,7 +65,7 @@ export class Helper {
           this.express.generator(environment)
           break;
 
-        case "Loopback":
+        case "LoopBack":
         const loopback = this.loopback.getListTask(environment)
         await loopback.run();
         await console.log(boxen('Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container image name is : loopback-app:v1', {padding: 1, margin: 1, borderStyle: 'double'}));

@@ -18,7 +18,7 @@ export class ProcessData {
     fs.access(`./${path}`, fs.F_OK, async (err: any) => {
       if (err) {
         console.log(
-          chalk.default.red("Le fichier scafoldme.json est introuvable")
+          chalk.default.red("Le fichier scaffoldme.json est introuvable")
         );
         return;
       }

@@ -13,7 +13,7 @@ export enum TechnologyName {
   Angular = "Angular",
   VueJs = "VueJs",
   Express = "Express",
-  Loopback = "Loopback"
+  LoopBack = "LoopBack"
 }
 
 export interface Technology {
