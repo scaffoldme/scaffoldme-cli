@@ -2,7 +2,7 @@ import * as chalk from "chalk";
 import { Helper } from "./helper";
 import { watcher } from "../utils/watcher";
 const fs = require("fs");
-const path = "scafoldme.json";
+const path = "scaffoldme.json";
 import { Project } from "./interface/Project";
 const jsonfile = require("jsonfile");
 
