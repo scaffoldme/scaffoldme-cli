@@ -64,8 +64,14 @@ export class Helper {
           break;
 
         case "Express":
-          console.log(environment.framework.name);
-          this.express.generator(environment);
+          const express = this.express.getListTask(environment);
+          await express.run();
+          await console.log(
+            boxen(
+              "Powered with 💙 by scaffoldme team\nYour app runing at http://localhost:4000\nYour docker container name is : express_app\nYour docker container image name is : express-app:v1",
+              { padding: 1, margin: 1, borderStyle: "double" }
+            )
+          );
           break;
 
         case "LoopBack":
