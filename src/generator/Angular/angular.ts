@@ -33,12 +33,12 @@ export class Angular{
             execa.shell(`cd ${environment.environmentType} && npm install`)
       },
       {
-        title: '🐋  Build docker image',
+        title: '🐳  Build docker image',
         task: () =>
             execa.shell(`cd ${environment.environmentType} && docker build -t angular-app:v1 .`)
       },
       {
-        title: `🐋  Run docker container ${environment.environmentType}`,
+        title: `🐳  Run docker container ${environment.environmentType}`,
         task: () =>
             execa.shell('docker run --name angular_app -p 4200:80 -d angular-app:v1')
       }

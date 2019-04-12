@@ -57,7 +57,7 @@ export class Helper {
           await angular.run();
           await console.log(
             boxen(
-              "Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1",
+              "Powered with 💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1",
               { padding: 1, margin: 1, borderStyle: "double" }
             )
           );
@@ -73,7 +73,7 @@ export class Helper {
           await loopback.run();
           await console.log(
             boxen(
-              "Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1",
+              "Powered with 💙 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1",
               { padding: 1, margin: 1, borderStyle: "double" }
             )
           );

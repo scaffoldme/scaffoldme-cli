@@ -29,11 +29,11 @@ export class Loopback {
           task: () => execa.shell(`cd ${environment.environmentType} && npm install`)
         },
         {
-          title: '🐋  Build docker image',
+          title: '🐳  Build docker image',
           task: () => execa.shell(`cd ${environment.environmentType} && docker build -t loopback-app:v1 .`)
         },
         {
-          title: `🐋  Run docker container`,
+          title: `🐳  Run docker container`,
           task: () => execa.shell('docker run --name loopback_app -p 3000:3000 -d loopback-app:v1')
         }
 
