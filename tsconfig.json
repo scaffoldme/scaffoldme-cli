@@ -1,21 +1,21 @@
 {
-	"compileOnSave": true,
-	"compilerOptions": {
-    "target": "es5",           
-    "module": "commonjs",                 
-    "lib": ["es6", "es2017", "dom"], 
-    "declaration": true,     
-    "outDir": "lib",      
-    "strict": true,        
-    "types": ["node"],
-    "esModuleInterop": true,   
-    "resolveJsonModule": true
+  "compileOnSave": true,
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "es5",
+    "lib": ["es2017"],
+    "outDir": "lib",
+    "noImplicitAny": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true
   },
-	"moduleResolution": "node",
-	"files": [
-	  "index.ts"
-	],
-	"include": [
-		"src/**/*.ts"
-	]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
