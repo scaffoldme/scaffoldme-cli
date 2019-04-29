@@ -15,7 +15,9 @@
     "no-var-requires": true,
     "trailing-comma": false,
     "no-console": false,
-    "max-line-length": [true, 140]
+    "max-line-length": [true, 140],
+    "prefer-for-of": false,
+    "member-ordering": false
   },
   "rulesDirectory": [],
   "linterOptions": {

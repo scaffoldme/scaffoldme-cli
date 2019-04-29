@@ -1,10 +1,9 @@
-import Listr from 'listr';
 
 export type EnvironmentType = 'frontEnd' | 'api' | 'service' | 'mobile' | 'dataBase';
 
 export interface IEnvironment {
   id?: string;
-  name?: string;
+  name: string;
   description?: string;
   environmentType: EnvironmentType;
   framework: ITechnology;
@@ -23,7 +22,7 @@ export interface IVersion {
 
 export type TechnologyType = 'framework' | 'style' | 'typing' | 'module';
 
-export type TechnologyName = 'react' | 'angular' | 'vueJs' | 'express' | 'loopBack';
+export type TechnologyName = 'react' | 'angular' | 'vueJs' | 'express' | 'loopback';
 
 export interface ITechnology {
   id?: string;
@@ -37,11 +36,10 @@ export interface ITechnology {
   environments?: IEnvironment[];
 }
 
-export interface IInitFramework {
-  getListTask(environnement: IEnvironment): Listr;
-}
-
-export interface ICommand {
-  commands(): void;
-  run(): void;
+export interface IProject {
+  id?: string;
+  name?: string;
+  description?: string;
+  logo?: string;
+  environments?: IEnvironment[];
 }

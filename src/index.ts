@@ -3,14 +3,15 @@ import chalk from 'chalk';
 import * as clear from 'clear';
 import * as program from 'commander';
 import * as figlet from 'figlet';
-import { ProjectCommand } from './commands/project';
+import { FrameworkCommand } from './commands/framework-command';
+import { ProjectCommand } from './commands/project-command';
 
 export class CLI {
   // program: program.CommanderStatic;
   private commands: any[];
 
   constructor() {
-    this.commands = [new ProjectCommand()];
+    this.commands = [new ProjectCommand(), new FrameworkCommand()];
   }
 
   public start(): void {
