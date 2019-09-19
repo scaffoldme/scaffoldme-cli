@@ -1,50 +1,26 @@
 {
   "name": "scaffoldme-cli",
-  "version": "1.0.0",
-  "description": "scaffoldme cli to generate project backend and frontend",
-  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p . && sudo npm i -g",
-    "lint": "tslint --project tsconfig.json",
-    "haakily": "openapi-generator generate -i ./haakily.json -g typescript-angular -o generated-sources/openapi --additional-properties='ngVersion=6.1.7'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scaffoldme/scaffoldme-cli.git"
-  },
-  "bin": {
-    "scaffoldme": "./lib/index.js"
-  },
-  "author": "Scaffoldme Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/scaffoldme/scaffoldme-cli/issues"
-  },
-  "homepage": "https://github.com/scaffoldme/scaffoldme-cli/#readme",
-  "dependencies": {
-    "boxen": "^3.1.0",
-    "chalk": "^2.4.2",
-    "clear": "^0.1.0",
-    "commander": "^2.20.0",
-    "execa": "^1.0.0",
-    "figlet": "^1.2.1",
-    "inquirer": "^6.2.1",
-    "listr": "^0.14.3",
-    "ora": "^3.4.0",
-    "shelljs": "^0.8.3",
-    "terminal-link": "^1.3.0"
+    "bootstrap": "lerna bootstrap && npm run build",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint -- -- --fix",
+    "link": "lerna exec npm link",
+    "unlink": "lerna exec npm unlink",
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "watch": "lerna run watch --parallel",
+    "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
+    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
-    "@types/commander": "^2.12.2",
-    "@types/execa": "^0.9.0",
-    "@types/figlet": "^1.2.0",
-    "@types/inquirer": "0.0.41",
-    "@types/listr": "^0.13.0",
-    "@types/node": "^10.3.2",
-    "@types/shelljs": "^0.8.5",
+    "lerna": "^3.16.4",
     "tslint": "^5.9.1",
     "typescript": "^3.4.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna exec --concurrency 1 --stream -- lint-staged"
+    }
   }
 }

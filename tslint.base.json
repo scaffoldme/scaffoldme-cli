@@ -1,0 +1,27 @@
+{
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "array-type": false,
+    "member-ordering": false,
+    "member-access": false,
+    "quotemark": [true, "single"],
+    "object-literal-sort-keys": false,
+    "prefer-const": true,
+    "arrow-parens": [false],
+    "max-classes-per-file": false,
+    "import-spacing": true,
+    "no-trailing-whitespace": true,
+    "object-literal-key-quotes": [true, "as-needed"],
+    "ordered-imports": false,
+    "no-var-requires": false,
+    "trailing-comma": false,
+    "no-console": false,
+    "max-line-length": false,
+    "forin": false,
+    "no-empty-interface": false,
+    "interface-name": false,
+    "strict-boolean-conditions": false,
+    "jsdoc-format": [true]
+  }
+}
