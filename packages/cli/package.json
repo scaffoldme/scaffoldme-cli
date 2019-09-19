@@ -1,0 +1,86 @@
+{
+  "name": "scaffoldme-cli",
+  "version": "1.0.0",
+  "description": "scaffoldme cli to generate project backend and frontend",
+  "scripts": {
+    "watch": "tsc -w --preserveWatchOutput",
+    "build": "npm run clean && tsc",
+    "lint": "tslint --project tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -Rf dist"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "scaffoldme": "./bin/scaffoldme"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scaffoldme/scaffoldme-cli.git"
+  },
+  "author": "Scaffoldme Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scaffoldme/scaffoldme-cli/issues"
+  },
+  "homepage": "https://github.com/scaffoldme/scaffoldme-cli#readme",
+  "dependencies": {
+    "@ionic/cli-framework": "2.0.2",
+    "@ionic/discover": "2.0.1",
+    "@ionic/utils-array": "1.0.1",
+    "@ionic/utils-fs": "2.0.2",
+    "@ionic/utils-network": "1.0.1",
+    "@ionic/utils-process": "1.0.1",
+    "@ionic/utils-stream": "2.0.0",
+    "@ionic/utils-subprocess": "1.0.2",
+    "@ionic/utils-terminal": "1.0.1",
+    "boxen": "^4.1.0",
+    "chalk": "^2.3.0",
+    "debug": "^4.0.0",
+    "diff": "^4.0.1",
+    "leek": "0.0.24",
+    "lodash": "^4.17.5",
+    "open": "^6.1.0",
+    "os-name": "^3.1.0",
+    "semver": "^6.0.0",
+    "split2": "^3.0.0",
+    "ssh-config": "^1.1.1",
+    "stream-combiner2": "^1.1.1",
+    "superagent": "^4.1.0",
+    "superagent-proxy": "^2.0.0",
+    "tar": "^4.3.0",
+    "through2": "^3.0.0",
+    "tslib": "^1.9.0",
+    "update-notifier": "^2.3.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/boxen": "^3.0.1",
+    "@types/debug": "^4.1.1",
+    "@types/diff": "^4.0.0",
+    "@types/fs-extra": "^7.0.0",
+    "@types/inquirer": "0.0.43",
+    "@types/jest": "^24.0.3",
+    "@types/lodash": "^4.14.104",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "~8.9.4",
+    "@types/open": "~6.1.0",
+    "@types/os-name": "^3.1.0",
+    "@types/semver": "^6.0.0",
+    "@types/split2": "^2.1.6",
+    "@types/tar": "^4.0.0",
+    "@types/through2": "^2.0.33",
+    "@types/update-notifier": "^2.0.0",
+    "@types/uuid": "^3.4.3",
+    "jest": "^23.0.1",
+    "jest-cli": "^24.1.0",
+    "lint-staged": "^8.0.0",
+    "rimraf": "^2.6.2",
+    "source-map": "^0.7.0",
+    "ts-jest": "^23.10.1",
+    "tslint": "^5.9.1",
+    "typescript": "~3.5.1"
+  }
+}
