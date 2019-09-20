@@ -1,5 +1,5 @@
 {
-  "name": "scaffoldme-cli",
+  "name": "scaffoldme",
   "version": "1.0.0",
   "description": "scaffoldme cli to generate project backend and frontend",
   "scripts": {
@@ -14,7 +14,7 @@
     "scaffoldme": "./bin/scaffoldme"
   },
   "engines": {
-    "node": ">=6.4.0"
+    "node": ">=8.9.4"
   },
   "repository": {
     "type": "git",

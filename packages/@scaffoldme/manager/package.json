@@ -1,8 +1,8 @@
 {
-  "name": "scaffoldme-manager",
+  "name": "@scaffoldme/manager",
   "version": "1.0.0",
   "description": "Manage your project (add, remove, execute custom script)",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
     "build": "npm run clean && tsc",
@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/scaffoldme/scaffoldme-cli/#readme",
   "dependencies": {
-    "scaffoldme-cli": "1.0.0"
+    "debug": "^4.1.1",
+    "scaffoldme": "1.0.0"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.5",
     "tslint": "^5.9.1",
     "typescript": "^3.4.5"
   }
