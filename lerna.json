@@ -1,5 +1,11 @@
 {
   "version": "independent",
-  "npmClient": "npm",
-  "packages": ["packages/**"]
+  "packages": [
+    "packages/**"
+  ],
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  }
 }

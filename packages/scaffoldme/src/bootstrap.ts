@@ -19,7 +19,7 @@ export async function detectLocalCLI(): Promise<string> {
   let pkgPath: string | undefined;
 
   try {
-    pkgPath = require.resolve('../package', { paths: compileNodeModulesPaths(process.cwd()) });
+    pkgPath = require.resolve('../../package', { paths: compileNodeModulesPaths(process.cwd()) });
 
   } catch (e) {
     // ignore
