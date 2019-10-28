@@ -1,1 +1,0 @@
-# scaffoldme-manager

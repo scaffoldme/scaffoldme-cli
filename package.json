@@ -1,26 +1,17 @@
 {
   "name": "scaffoldme-cli",
+  "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap && npm run build",
+    "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna run clean",
-    "lint": "lerna run lint",
-    "lint:fix": "lerna run lint -- -- --fix",
-    "link": "lerna exec npm link",
-    "unlink": "lerna exec npm unlink",
-    "test": "lerna run test",
     "build": "lerna run build",
+    "pub": "lerna publish",
     "watch": "lerna run watch --parallel",
-    "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
-    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
+    "link": "lerna exec npm link"
   },
   "devDependencies": {
     "lerna": "^3.16.4",
     "tslint": "^5.9.1",
     "typescript": "^3.6.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lerna exec --concurrency 1 --stream -- lint-staged"
-    }
   }
 }
