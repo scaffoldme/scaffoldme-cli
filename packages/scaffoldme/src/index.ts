@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
-const meaningOfLife = 42;
+'use strict';
 
-console.log('----- mean', meaningOfLife);
+import { Scaffoldme } from "./lib/Scaffoldme";
+
+const scaffoldme = new Scaffoldme();
+scaffoldme.run();

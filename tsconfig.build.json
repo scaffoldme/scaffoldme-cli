@@ -11,7 +11,7 @@
     "pretty": true,
     "strict": true,
     "target": "es2018",
-    "types": [],
+    "types": ["node"],
     "lib": ["es2018", "dom"]
   },
 
