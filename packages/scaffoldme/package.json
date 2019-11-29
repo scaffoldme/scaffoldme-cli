@@ -21,6 +21,7 @@
   "dependencies": {
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
-    "commander": "^3.0.2"
+    "commander": "^3.0.2",
+    "@scaffoldme-cli/scaffoldme-core": "^1.0.0"
   }
 }

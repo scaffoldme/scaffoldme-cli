@@ -1,5 +1,5 @@
 {
-  "name": "@scaffoldme-cli/scaffoldme-utils",
+  "name": "@scaffoldme-cli/scaffoldme-core",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index",

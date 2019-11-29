@@ -14,7 +14,7 @@
     "types": ["node"],
     "lib": ["es2018", "dom"]
   },
-
+  "include": ["packages/**/*", "bin"],
   "exclude": [
     "node_modules",
     "dist"
