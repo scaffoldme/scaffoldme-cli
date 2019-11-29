@@ -123,3 +123,4 @@ lerna-debug.log
 package-lock.json*
 npm-debug.log*
 lerna-debug.log
+build

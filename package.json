@@ -9,10 +9,10 @@
     "pub": "lerna publish",
     "watch": "lerna run watch --parallel",
     "link": "lerna exec npm link",
-    "start": "node bin/scaffoldme.js"
+    "start": "ts-node bin/scaffoldme.ts"
   },
   "bin": {
-    "scaffoldme": "bin/scaffoldme.js"
+    "scaffoldme": "build/bin/scaffoldme.js"
   },
   "devDependencies": {
     "lerna": "^3.16.4",

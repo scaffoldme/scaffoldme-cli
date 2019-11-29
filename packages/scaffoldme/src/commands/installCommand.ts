@@ -8,7 +8,7 @@ export class InstallCommand extends AbstractCommand {
     program
       .command('install [name] ')
       .alias('i')
-      .description('Install Scaffoldme application with Json Filz')
+      .description('Install Scaffoldme application with Json File')
       /* .option(
         '-d, --dry-run',
         'Allow to test changes before executing the command',
