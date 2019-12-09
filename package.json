@@ -9,7 +9,8 @@
     "pub": "lerna publish",
     "watch": "lerna run watch --parallel",
     "link": "lerna exec npm link",
-    "start": "ts-node bin/scaffoldme.ts"
+    "start": "ts-node bin/scaffoldme.ts",
+    "go": "npm i && npm run bootstrap && npm run build"
   },
   "bin": {
     "scaffoldme": "build/bin/scaffoldme.js"

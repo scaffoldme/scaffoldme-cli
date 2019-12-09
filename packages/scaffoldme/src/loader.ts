@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { CommanderStatic } from 'commander';
 import { InstallCommand } from './commands/installCommand'
 import { InstallAction } from '@scaffoldme-cli/scaffoldme-core'
-const ERROR_PREFIX = "bim";
+import { ERROR_PREFIX } from '@scaffoldme-cli/scaffoldme-utils/lib/ui/prefixes'
 
 export class Loader {
   public static load(program: CommanderStatic): void {
