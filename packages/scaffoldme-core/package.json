@@ -13,6 +13,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@scaffoldme-cli/scaffoldme": "^1.0.0"
+    "@scaffoldme-cli/scaffoldme": "^1.0.0",
+    "@scaffoldme-cli/scaffoldme-utils": "^1.0.0",
+    "os-name": "3.1.0"
   }
 }
