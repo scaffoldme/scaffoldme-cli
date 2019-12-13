@@ -4,7 +4,7 @@ import chalk from 'chalk';
 // import osName = require('os-name');
 import { join } from 'path';
 import { AbstractAction } from './abstractAction';
-import { MESSAGES } from '@scaffoldme-cli/scaffoldme-utils/lib/ui/messages'
+import { MESSAGES } from '@scaffoldme-cli/scaffoldme-utils'
 // import { InfoA } from '@scaffoldme-cli/scaffoldme-core'
 
 export class InfoAction extends AbstractAction {

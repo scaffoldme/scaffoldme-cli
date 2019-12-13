@@ -1,8 +1,7 @@
 import { AbstractAction } from './abstractAction';
 import { Input } from '@scaffoldme-cli/scaffoldme';
 // import { displayNScaffoldmeInformation } from './infoAction'
-import { MESSAGES } from '@scaffoldme-cli/scaffoldme-utils'
-import { PROJECT_FILE } from '@scaffoldme-cli/scaffoldme-utils/src/constants'
+import { MESSAGES, PROJECT_FILE } from '@scaffoldme-cli/scaffoldme-utils'
 import chalk from 'chalk';
 const fs = require("fs");
 
@@ -24,8 +23,8 @@ export class InstallAction extends AbstractAction {
 const checkScaffoldmeJsonFile = async () => {
   try {
     if (!fs.existsSync(PROJECT_FILE)) {
-      console.error('ok'
-        //chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST)
+      console.error(
+        chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST)
       );
     }
   } catch (err) {

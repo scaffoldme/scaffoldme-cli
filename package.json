@@ -10,18 +10,20 @@
     "watch": "lerna run watch --parallel",
     "link": "lerna exec npm link",
     "start": "ts-node bin/scaffoldme.ts",
+    "sc": "node build/bin/scaffoldme.js",
     "go": "npm i && npm run bootstrap && npm run build"
   },
   "bin": {
     "scaffoldme": "build/bin/scaffoldme.js"
   },
-  "devDependencies": {
-    "lerna": "^3.16.4",
-    "tslint": "^5.9.1",
-    "typescript": "^3.6.3"
-  },
   "dependencies": {
     "@types/node": "^12.12.17",
     "commander": "^4.0.1"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.4",
+    "tslint": "^5.9.1",
+    "typescript": "^3.6.3",
+    "@types/commander": "^2.9.1"
   }
 }
