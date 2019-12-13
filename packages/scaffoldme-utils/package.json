@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme-cli/scaffoldme-utils",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "main": "index.ts",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@scaffoldme-cli/scaffoldme": "^1.0.0",
+    "@scaffoldme-cli/scaffoldme": "^1.0.1-alpha.0",
     "node-emoji": "1.10.0"
   },
   "devDependencies": {

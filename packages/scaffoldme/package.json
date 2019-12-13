@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme-cli/scaffoldme",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "main": "index.ts",
   "types": "dist/index.d.ts",
   "files": [
@@ -19,10 +19,10 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
+    "@scaffoldme-cli/scaffoldme-core": "^1.0.1-alpha.0",
+    "@scaffoldme-cli/scaffoldme-utils": "^1.0.1-alpha.0",
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
-    "commander": "^3.0.2",
-    "@scaffoldme-cli/scaffoldme-core": "^1.0.0",
-    "@scaffoldme-cli/scaffoldme-utils": "^1.0.0"
+    "commander": "^3.0.2"
   }
 }
