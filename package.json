@@ -2,6 +2,15 @@
   "name": "scaffoldme-cli",
   "version": "1.0.0",
   "private": true,
+  "main": "./lib/index.js",
+  "keywords": [
+    "cli",
+    "scaffoldme",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Scaffoldme Team",
+  "license": "MIT",
   "scripts": {
     "postinstall": "lerna bootstrap",
     "clean": "lerna run clean",
@@ -11,10 +20,11 @@
     "link": "lerna exec npm link",
     "start": "ts-node bin/scaffoldme.ts",
     "sc": "node build/bin/scaffoldme.js",
+    "st": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "go": "npm i && npm run bootstrap && npm run build"
   },
   "bin": {
-    "scaffoldme": "build/bin/scaffoldme.js"
+    "scaffoldme": "./lib/index.js"
   },
   "dependencies": {
     "@types/node": "^12.12.17",

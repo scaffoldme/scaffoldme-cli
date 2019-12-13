@@ -2,7 +2,7 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "build",
+    "outDir": "lib",
     "paths": {
       "@scaffoldme-cli/*": ["packages/*"]
     }
