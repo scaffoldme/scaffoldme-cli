@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { CommanderStatic } from 'commander';
 import { InstallCommand } from './commands/installCommand'
 import { InstallAction } from '@scaffoldme-cli/scaffoldme-core'
-import { ERROR_PREFIX } from '@scaffoldme-cli/scaffoldme-utils/lib/ui/prefixes'
+import { ERROR_PREFIX } from '@scaffoldme-cli/scaffoldme-utils'
 
 export class Loader {
   public static load(program: CommanderStatic): void {

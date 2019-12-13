@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as commander from 'commander';
 import { CommanderStatic } from 'commander';
-import { Loader } from '../packages/scaffoldme/src/loader';
+import { Loader } from '../packages/scaffoldme';
 
 const bootstrap = () => {
   const program: CommanderStatic = commander;

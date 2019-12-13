@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "postinstall": "lerna bootstrap",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "lerna publish",
@@ -21,6 +21,7 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@types/node": "^12.11.7"
+    "@types/node": "^12.12.17",
+    "commander": "^4.0.1"
   }
 }
