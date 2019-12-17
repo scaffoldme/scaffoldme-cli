@@ -9,27 +9,29 @@ export class InstallAction extends AbstractAction {
     //console.log('input ----', inputs);
     //console.log('options -----', options);
 
-    //await displayNScaffoldmeInformation();
-    await checkScaffoldmeJsonFile();
-
-    console.log(MESSAGES)
-
+    // await displayNScaffoldmeInformation();
+     await checkScaffoldmeJsonFile();
+     console.log('la suite');
+     
 
     process.exit(0);
   }
 }
 
 const checkScaffoldmeJsonFile = async () => {
+  
   try {
     if (!fs.existsSync(PROJECT_FILE)) {
       console.error(
         chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST)
       );
+      process.exit(0);
     }
   } catch (err) {
     console.error(
       chalk.red("ERROR")
     );
+    process.exit(0);
   }
   
 };

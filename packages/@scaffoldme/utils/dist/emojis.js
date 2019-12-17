@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_emoji_1 = require("node-emoji");
 exports.EMOJIS = {
+    NOT_FOUND: node_emoji_1.get('x'),
     HEART: node_emoji_1.get('heart'),
     COFFEE: node_emoji_1.get('coffee'),
     BEER: node_emoji_1.get('beer'),

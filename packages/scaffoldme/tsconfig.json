@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dit",
+    "outDir": "./dist",
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],

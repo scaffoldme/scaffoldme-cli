@@ -15,7 +15,7 @@ class InfoAction extends core_1.AbstractAction {
 }
 exports.InfoAction = InfoAction;
 exports.displayNScaffoldmeInformation = async () => {
-    console.info(chalk_1.default.green('[Nest Information]'));
+    console.info(chalk_1.default.green('[sc Information]'));
     try {
         const dependencies = await readProjectPackageJsonDependencies();
         // displayNestVersions(dependencies);

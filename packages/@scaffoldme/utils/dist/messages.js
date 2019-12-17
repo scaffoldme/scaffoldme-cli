@@ -21,5 +21,5 @@ exports.MESSAGES = {
     PACKAGE_MANAGER_INSTALLATION_FAILED: `${emojis_1.EMOJIS.SCREAM}  Packages installation failed, see above`,
     // tslint:disable-next-line:max-line-length
     NEST_INFORMATION_PACKAGE_MANAGER_FAILED: `${emojis_1.EMOJIS.SMIRK}  cannot read your project package.json file, are you inside your project directory?`,
-    SCAFFOLDME_JSON_FILE_NOT_EXIST: `scafoldme.json file was not found`
+    SCAFFOLDME_JSON_FILE_NOT_EXIST: `scaffoldme.json file was not found ${emojis_1.EMOJIS.HEART}`
 };

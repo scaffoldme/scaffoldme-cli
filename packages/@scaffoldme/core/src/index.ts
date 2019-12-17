@@ -1,1 +1,1 @@
-export * from './actionsCommands'
+export * from './lib'

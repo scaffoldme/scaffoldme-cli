@@ -9,9 +9,9 @@ class InstallAction extends core_1.AbstractAction {
     async handle(inputs, options) {
         //console.log('input ----', inputs);
         //console.log('options -----', options);
-        //await displayNScaffoldmeInformation();
+        // await displayNScaffoldmeInformation();
         await checkScaffoldmeJsonFile();
-        console.log(utils_1.MESSAGES);
+        console.log('la suite');
         process.exit(0);
     }
 }
@@ -20,9 +20,11 @@ const checkScaffoldmeJsonFile = async () => {
     try {
         if (!fs.existsSync(utils_1.PROJECT_FILE)) {
             console.error(chalk_1.default.red(utils_1.MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
+            process.exit(0);
         }
     }
     catch (err) {
         console.error(chalk_1.default.red("ERROR"));
+        process.exit(0);
     }
 };

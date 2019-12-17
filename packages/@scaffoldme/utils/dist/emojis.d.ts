@@ -1,4 +1,5 @@
 export declare const EMOJIS: {
+    NOT_FOUND: string;
     HEART: string;
     COFFEE: string;
     BEER: string;

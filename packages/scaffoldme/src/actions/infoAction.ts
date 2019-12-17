@@ -19,7 +19,7 @@ interface PackageJsonDependencies {
 
 
 export const displayNScaffoldmeInformation = async () => {
-    console.info(chalk.green('[Nest Information]'));
+    console.info(chalk.green('[sc Information]'));
     try {
       const dependencies: PackageJsonDependencies = await readProjectPackageJsonDependencies();
       // displayNestVersions(dependencies);

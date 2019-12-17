@@ -7,7 +7,7 @@
     "dist"
   ],
   "bin": {
-    "scaffoldme": "./bin/scaffoldme.js"
+    "scaffoldmee": "./bin/scaffoldme.js"
   },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
@@ -17,7 +17,8 @@
     "clean": "rm -Rf dist"
   },
   "devDependencies": {
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "@types/commander": "^2.9.1"
   },
   "dependencies": {
     "@scaffoldme/core": "^1.0.0",

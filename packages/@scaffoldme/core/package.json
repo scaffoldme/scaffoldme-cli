@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@scaffoldme/utils": "^1.0.0",
-    "os-name": "3.1.0"
+    "os-name": "3.1.0",
+    "commander": "^3.0.2"
   },
   "devDependencies": {
     "tslint": "^5.9.1",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "@types/commander": "^2.9.1"
   }
 }

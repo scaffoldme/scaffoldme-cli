@@ -1,4 +1,4 @@
-export const PROJECT_FILE = 'scaffdoldme.json';
+export const PROJECT_FILE = 'scaffoldme.json';
 
 // Default port Framwork
 export const DEFAULT_PORT_ANGULAR = 4200;
