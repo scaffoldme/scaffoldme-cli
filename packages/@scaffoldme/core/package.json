@@ -1,14 +1,11 @@
 {
-  "name": "scaffoldme",
+  "name": "@scaffoldme/core",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "bin": {
-    "scaffoldme": "./bin/scaffoldme.js"
-  },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
     "build": "npm run clean && tsc",
@@ -16,14 +13,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -Rf dist"
   },
-  "devDependencies": {
-    "typescript": "^3.6.3"
-  },
   "dependencies": {
-    "@scaffoldme/core": "^1.0.0",
     "@scaffoldme/utils": "^1.0.0",
-    "@types/node": "^12.11.7",
-    "clear": "^0.1.0",
-    "commander": "^3.0.2"
+    "os-name": "3.1.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "typescript": "^3.4.5"
   }
 }

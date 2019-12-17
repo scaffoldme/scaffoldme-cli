@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import { CommanderStatic } from 'commander';
 import { InstallCommand } from './commands/installCommand'
-import { InstallAction } from '@scaffoldme-cli/scaffoldme-core'
-import { ERROR_PREFIX } from '@scaffoldme-cli/scaffoldme-utils'
+import { InstallAction } from './actions/installAction'
+import { ERROR_PREFIX } from '@scaffoldme/utils'
 
 export class Loader {
   public static load(program: CommanderStatic): void {

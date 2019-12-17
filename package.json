@@ -2,7 +2,6 @@
   "name": "scaffoldme-cli",
   "version": "1.0.0",
   "private": true,
-  "main": "./lib/index.js",
   "keywords": [
     "cli",
     "scaffoldme",
@@ -12,7 +11,7 @@
   "author": "Scaffoldme Team",
   "license": "MIT",
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && npm run build",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "lerna publish",
@@ -23,9 +22,6 @@
     "st": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "go": "npm i && npm run bootstrap && npm run build"
   },
-  "bin": {
-    "scaffoldme": "./lib/index.js"
-  },
   "dependencies": {
     "@types/node": "^12.12.17",
     "commander": "^4.0.1"
@@ -34,6 +30,12 @@
     "lerna": "^3.16.4",
     "tslint": "^5.9.1",
     "typescript": "^3.6.3",
-    "@types/commander": "^2.9.1"
+    "@types/commander": "^2.9.1",
+    "husky": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna exec --concurrency 1 --stream -- lint-staged"
+    }
   }
 }

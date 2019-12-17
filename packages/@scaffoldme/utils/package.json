@@ -1,0 +1,36 @@
+{
+  "name": "@scaffoldme/utils",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "watch": "tsc -w --preserveWatchOutput",
+    "build": "npm run clean && tsc",
+    "lint": "tslint --project tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -Rf dist"
+  },
+  "dependencies": {
+    "node-emoji": "1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.12.14",
+    "@types/node-emoji": "1.8.1",
+    "@types/os-name": "2.0.0",
+    "@types/rimraf": "2.0.3",
+    "@types/webpack-node-externals": "1.7.0",
+    "delete-empty": "3.0.0",
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "jest": "24.9.0",
+    "prettier": "1.19.1",
+    "ts-jest": "24.2.0",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.5.4",
+    "tslint": "5.20.1",
+    "typescript": "3.7.2"
+  }
+}
