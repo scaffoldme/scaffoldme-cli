@@ -6,6 +6,10 @@ const utils_1 = require("@scaffoldme/utils");
 const chalk_1 = require("chalk");
 const fs = require("fs");
 class InstallAction extends core_1.AbstractAction {
+    /**
+     * @param  {Input[]} inputs
+     * @param  {Input[]} options
+     */
     async handle(inputs, options) {
         //console.log('input ----', inputs);
         //console.log('options -----', options);
@@ -16,6 +20,9 @@ class InstallAction extends core_1.AbstractAction {
     }
 }
 exports.InstallAction = InstallAction;
+/**
+ * Check if scaffoldme file exist
+ */
 const checkScaffoldmeJsonFile = async () => {
     try {
         if (!fs.existsSync(utils_1.PROJECT_FILE)) {

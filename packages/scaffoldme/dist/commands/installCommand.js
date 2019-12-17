@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //import { Collection } from '../lib/schematics';
 const abstractCommand_1 = require("./abstractCommand");
 class InstallCommand extends abstractCommand_1.AbstractCommand {
+    /**
+     * load install command
+     * @param  {CommanderStatic} program
+     */
     load(program) {
         program
             .command('install [name] ')

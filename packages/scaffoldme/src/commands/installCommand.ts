@@ -4,6 +4,11 @@ import { AbstractCommand } from './abstractCommand';
 import { Input } from '../input';
 
 export class InstallCommand extends AbstractCommand {
+
+  /**
+   * load install command
+   * @param  {CommanderStatic} program
+   */
   public load(program: CommanderStatic) {
     program
       .command('install [name] ')

@@ -9,7 +9,10 @@ export class Loader {
     new InstallCommand(new InstallAction()).load(program);
     this.handleInvalidCommand(program);
   }
-
+  /**
+   * check inalid command and return error
+   * @param  {CommanderStatic} program
+   */
   private static handleInvalidCommand(program: CommanderStatic) {
     program.on('command:*', () => {
       console.error(

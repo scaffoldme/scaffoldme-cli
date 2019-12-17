@@ -5,6 +5,11 @@ import chalk from 'chalk';
 const fs = require("fs");
 
 export class InstallAction extends AbstractAction {
+
+  /**
+   * @param  {Input[]} inputs
+   * @param  {Input[]} options
+   */
   public async handle(inputs: Input[], options: Input[]) {
     //console.log('input ----', inputs);
     //console.log('options -----', options);
@@ -18,6 +23,9 @@ export class InstallAction extends AbstractAction {
   }
 }
 
+/**
+ * Check if scaffoldme file exist
+ */
 const checkScaffoldmeJsonFile = async () => {
   
   try {

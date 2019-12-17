@@ -9,6 +9,10 @@ class Loader {
         new installCommand_1.InstallCommand(new installAction_1.InstallAction()).load(program);
         this.handleInvalidCommand(program);
     }
+    /**
+     * check inalid command and return error
+     * @param  {CommanderStatic} program
+     */
     static handleInvalidCommand(program) {
         program.on('command:*', () => {
             console.error(`\n${utils_1.ERROR_PREFIX} Invalid command: ${chalk_1.default.red('%s')}`, program.args.join(' '));
