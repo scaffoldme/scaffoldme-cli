@@ -3,6 +3,7 @@ import { AbstractAction, Input } from '@scaffoldme/core';
 import { MESSAGES, PROJECT_FILE } from '@scaffoldme/utils'
 import chalk from 'chalk';
 const fs = require("fs");
+import { Project } from '@scaffoldme/core'
 
 export class InstallAction extends AbstractAction {
 
@@ -16,7 +17,14 @@ export class InstallAction extends AbstractAction {
 
     // await displayNScaffoldmeInformation();
      await checkScaffoldmeJsonFile();
-     console.log('la suite');
+     console.error(
+      chalk.green("begin installation ....")
+    );
+      const project : Project = {name: "amazon", description: "descriptio"}
+
+      if (project.logo == "flavien")
+      
+     
      
 
     process.exit(0);

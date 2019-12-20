@@ -15,8 +15,10 @@ class InstallAction extends core_1.AbstractAction {
         //console.log('options -----', options);
         // await displayNScaffoldmeInformation();
         await checkScaffoldmeJsonFile();
-        console.log('la suite');
-        process.exit(0);
+        console.error(chalk_1.default.green("begin installation ...."));
+        const project = { name: "amazon", description: "descriptio" };
+        if (project.logo == "flavien")
+            process.exit(0);
     }
 }
 exports.InstallAction = InstallAction;
