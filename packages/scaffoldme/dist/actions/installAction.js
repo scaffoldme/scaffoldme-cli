@@ -17,7 +17,7 @@ class InstallAction extends core_1.AbstractAction {
         await checkScaffoldmeJsonFile();
         console.error(chalk_1.default.green("begin installation ...."));
         const project = { name: "amazon", description: "descriptio" };
-        if (project.logo == "flavien")
+        if (project.logo == "new project")
             process.exit(0);
     }
 }

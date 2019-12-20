@@ -22,7 +22,7 @@ export class InstallAction extends AbstractAction {
     );
       const project : Project = {name: "amazon", description: "descriptio"}
 
-      if (project.logo == "flavien")
+      if (project.logo == "new project")
       
      
      
