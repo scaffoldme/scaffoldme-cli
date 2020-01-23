@@ -1,2 +1,3 @@
-export * from "./installAction"
-export * from "./infoAction"
+export * from "./abstractAction";
+// export * from "./infoAction";
+export * from "./installAction";

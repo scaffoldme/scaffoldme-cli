@@ -1,5 +1,5 @@
-import { CommanderStatic } from 'commander';
-import { AbstractAction } from '@scaffoldme/core';
+import { CommanderStatic } from "commander";
+import { AbstractAction } from "../actions/abstractAction";
 export declare abstract class AbstractCommand {
     protected action: AbstractAction;
     constructor(action: AbstractAction);

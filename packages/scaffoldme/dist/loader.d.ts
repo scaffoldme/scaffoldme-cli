@@ -1,6 +1,6 @@
-import { CommanderStatic } from 'commander';
+import { CommanderStatic } from "commander";
 export declare class Loader {
-    static load(program: CommanderStatic): void;
+    static load(program: CommanderStatic): Promise<void>;
     /**
      * check inalid command and return error
      * @param  {CommanderStatic} program

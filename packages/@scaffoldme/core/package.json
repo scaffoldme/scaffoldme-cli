@@ -11,12 +11,18 @@
     "build": "npm run clean && tsc",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -Rf dist"
+    "clean": "rm -Rf dist",
+    "build:sdk": "npm run build:sdk-techologies && npm run build:sdk-projects",
+    "build:sdk-techologies": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-technologies-api-master.as51985.net/openapi.json -o ./src/api/generate/technologies-api -c generator-config.json -g typescript-axios",
+    "build:sdk-projects": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-projects-api-master.as51985.net/openapi.json -o ./src/api/generate/projects-api -c generator-config.json -g typescript-axios"
   },
   "dependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.8-4.2.2",
     "@scaffoldme/utils": "^1.0.0",
-    "os-name": "3.1.0",
-    "commander": "^3.0.2"
+    "axios": "^0.18.1",
+    "commander": "^3.0.2",
+    "jsonfile": "^5.0.0",
+    "os-name": "3.1.0"
   },
   "devDependencies": {
     "tslint": "^5.9.1",

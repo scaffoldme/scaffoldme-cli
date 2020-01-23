@@ -1,4 +1,5 @@
-import { AbstractAction, Input } from '@scaffoldme/core';
+import { Input } from "../input";
+import { AbstractAction } from "./abstractAction";
 export declare class InstallAction extends AbstractAction {
     /**
      * @param  {Input[]} inputs

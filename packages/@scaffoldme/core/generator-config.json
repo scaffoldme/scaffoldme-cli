@@ -1,0 +1,12 @@
+{
+    "withSeparateModelsAndApi": true,
+    "npmVersion": "6.4.1",
+    "apiPackage": "apis",
+    "modelPackage": "models",
+    "withoutPrefixEnums": false,
+    "prependFormOrBodyParameters": true,
+    "ensureUniqueParams": false,
+    "supportsES6": true,
+    "allowUnicodeIdentifiers": false,
+    "modelPropertyNaming": "camelCase"
+} 

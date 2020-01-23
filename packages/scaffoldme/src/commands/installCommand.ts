@@ -1,19 +1,18 @@
-import { Command, CommanderStatic } from 'commander';
+import { Command, CommanderStatic } from "commander";
+import { Input } from "../input";
 //import { Collection } from '../lib/schematics';
-import { AbstractCommand } from './abstractCommand';
-import { Input } from '../input';
+import { AbstractCommand } from "./abstractCommand";
 
 export class InstallCommand extends AbstractCommand {
-
   /**
    * load install command
    * @param  {CommanderStatic} program
    */
   public load(program: CommanderStatic) {
     program
-      .command('install [name] ')
-      .alias('i')
-      .description('Install Scaffoldme application with Json File')
+      .command("install [name] ")
+      .alias("i")
+      .description("Install Scaffoldme application with Json File run watch")
       /* .option(
         '-d, --dry-run',
         'Allow to test changes before executing the command',
@@ -35,12 +34,14 @@ export class InstallCommand extends AbstractCommand {
       .action(async (name: string, command: Command) => {
         const options: Input[] = [];
         options.push({
-          name: 'language',
-          value: !!command.language ? command.language : 'ts',
+          name: "language",
+          value: !!command.language ? command.language : "ts"
         });
 
         const inputs: Input[] = [];
-        inputs.push({ name: 'name', value: name });
+        inputs.push({ name: "name", value: name });
+
+        // const project: Project | undefined = await loadScaffoldmeJson()
 
         await this.action.handle(inputs, options);
       });

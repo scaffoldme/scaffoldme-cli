@@ -1,24 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("@scaffoldme/core");
 // import { displayNScaffoldmeInformation } from './infoAction'
 const utils_1 = require("@scaffoldme/utils");
 const chalk_1 = require("chalk");
+const abstractAction_1 = require("./abstractAction");
 const fs = require("fs");
-class InstallAction extends core_1.AbstractAction {
+class InstallAction extends abstractAction_1.AbstractAction {
     /**
      * @param  {Input[]} inputs
      * @param  {Input[]} options
      */
     async handle(inputs, options) {
-        //console.log('input ----', inputs);
-        //console.log('options -----', options);
-        // await displayNScaffoldmeInformation();
+        console.log("install Action");
         await checkScaffoldmeJsonFile();
-        console.error(chalk_1.default.green("begin installation ...."));
-        const project = { name: "amazon", description: "descriptio" };
-        if (project.logo == "new project")
-            process.exit(0);
+        console.log(this._project);
+        //  console.log(await loadScaffoldmeJson());
+        //console.log(this.project);
+        // if (project.logo == "new project") process.exit(0);
     }
 }
 exports.InstallAction = InstallAction;

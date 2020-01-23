@@ -1,141 +1,17 @@
 {
-  "name": "Amazon",
-  "description": "site e commerce",
-  "environments": [
+  "id": 1,
+  "name": "ETNA 168h",
+  "description": "New version ETNA 168h",
+  "frontEnds": [
     {
-      "name": "front",
-      "environmentType": "frontend",
-      "modules": [
-        {
-          "name": "Socket.io",
-          "logo": "https://atomrace.com/blog/wp-content/uploads/2016/04/SOCKETIOICON.gif",
-          "urlDepo": "https://github.com/socketio/socket.io",
-          "technologyType": "module",
-          "environmentsType": ["frontend", "back", "mobile"],
-          "id": "5ca7cc7202aed5001522c40e",
-          "availableVersions": [
-            {
-              "version": "2.0",
-              "publicationDate": "2019-04-05T21:56:58.390Z",
-              "id": "5ca7d321facc87001679e4ed",
-              "technologyId": "5ca7cc7202aed5001522c40e"
-            }
-          ]
-        }
-      ],
-      "framework": {
-        "name": "angular",
-        "logo": "https://angular.io/assets/images/logos/angular/angular.svg",
-        "urlDepo": "https://github.com/angular/angular",
-        "technologyType": "framework",
-        "environmentsType": ["frontend", "mobile"],
-        "id": "5ca7c5483882810015a2d4b1",
-        "availableVersions": [
-          {
-            "version": "7.0",
-            "publicationDate": "2019-04-05T21:56:58.390Z",
-            "id": "5ca7d1f1facc87001679e4e5",
-            "technologyId": "5ca7c5483882810015a2d4b1"
-          }
-        ],
-        "selectedVersion": {
-          "version": "7.0",
-          "publicationDate": "2019-04-05T21:56:58.390Z",
-          "id": "5ca7d1f1facc87001679e4e5",
-          "technologyId": "5ca7c5483882810015a2d4b1"
-        }
-      },
-      "style": {
-        "name": "CSS",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
-        "technologyType": "style",
-        "environmentsType": ["frontend", "mobile"],
-        "id": "5ca7cb0202aed5001522c40c",
-        "availableVersions": [
-          {
-            "version": "3.0",
-            "publicationDate": "2019-04-05T21:56:58.390Z",
-            "id": "5ca7d2d3facc87001679e4eb",
-            "technologyId": "5ca7cb0202aed5001522c40c"
-          }
-        ]
-      },
-      "typing": {
-        "name": "TypeScript",
-        "logo": "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png",
-        "urlDepo": "https://github.com/Microsoft/TypeScript",
-        "technologyType": "typing",
-        "environmentsType": ["frontend", "api", "mobile"],
-        "id": "5ca7c6fe3882810015a2d4b3",
-        "availableVersions": [
-          {
-            "version": "3.4",
-            "publicationDate": "2019-04-05T21:56:58.390Z",
-            "id": "5ca7d262facc87001679e4e7",
-            "technologyId": "5ca7c6fe3882810015a2d4b3"
-          }
-        ]
-      }
-    },
+      "git": "git@github.com:scaffoldme/frontoffice.git",
+      "name": "frontoffice"
+    }
+  ],
+  "apis": [
     {
-      "name": "api",
-      "environmentType": "api",
-      "modules": [
-        {
-          "name": "Socket.io",
-          "logo": "https://atomrace.com/blog/wp-content/uploads/2016/04/SOCKETIOICON.gif",
-          "urlDepo": "https://github.com/socketio/socket.io",
-          "technologyType": "module",
-          "environmentsType": ["frontend", "back", "mobile"],
-          "id": "5ca7cc7202aed5001522c40e",
-          "availableVersions": [
-            {
-              "version": "2.0",
-              "publicationDate": "2019-04-05T21:56:58.390Z",
-              "id": "5ca7d321facc87001679e4ed",
-              "technologyId": "5ca7cc7202aed5001522c40e"
-            }
-          ]
-        }
-      ],
-      "framework": {
-        "name": "loopback",
-        "logo": "https://strongloop.com/blog-assets/2018/01/loopback-4-logo-sample.png",
-        "urlDepo": "https://github.com/strongloop/loopback",
-        "technologyType": "framework",
-        "environmentsType": ["api"],
-        "id": "5ca7c9023882810015a2d4b5",
-        "availableVersions": [
-          {
-            "version": "4.0",
-            "publicationDate": "2019-04-05T21:56:58.390Z",
-            "id": "5ca7d2b1facc87001679e4e9",
-            "technologyId": "5ca7c9023882810015a2d4b5"
-          }
-        ],
-        "selectedVersion": {
-          "version": "4.0",
-          "publicationDate": "2019-04-05T21:56:58.390Z",
-          "id": "5ca7d2b1facc87001679e4e9",
-          "technologyId": "5ca7c9023882810015a2d4b5"
-        }
-      },
-      "typing": {
-        "name": "TypeScript",
-        "logo": "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png",
-        "urlDepo": "https://github.com/Microsoft/TypeScript",
-        "technologyType": "typing",
-        "environmentsType": ["frontend", "api", "mobile"],
-        "id": "5ca7c6fe3882810015a2d4b3",
-        "availableVersions": [
-          {
-            "version": "3.4",
-            "publicationDate": "2019-04-05T21:56:58.390Z",
-            "id": "5ca7d262facc87001679e4e7",
-            "technologyId": "5ca7c6fe3882810015a2d4b3"
-          }
-        ]
-      }
+      "git": "git@github.com:scaffoldme/backoffice.git",
+      "name": "backoffice"
     }
   ]
 }

@@ -9,9 +9,9 @@ class InstallCommand extends abstractCommand_1.AbstractCommand {
      */
     load(program) {
         program
-            .command('install [name] ')
-            .alias('i')
-            .description('Install Scaffoldme application with Json File')
+            .command("install [name] ")
+            .alias("i")
+            .description("Install Scaffoldme application with Json File run watch")
             /* .option(
               '-d, --dry-run',
               'Allow to test changes before executing the command',
@@ -33,11 +33,12 @@ class InstallCommand extends abstractCommand_1.AbstractCommand {
             .action(async (name, command) => {
             const options = [];
             options.push({
-                name: 'language',
-                value: !!command.language ? command.language : 'ts',
+                name: "language",
+                value: !!command.language ? command.language : "ts"
             });
             const inputs = [];
-            inputs.push({ name: 'name', value: name });
+            inputs.push({ name: "name", value: name });
+            // const project: Project | undefined = await loadScaffoldmeJson()
             await this.action.handle(inputs, options);
         });
     }

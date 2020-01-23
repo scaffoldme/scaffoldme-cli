@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@types/node": "^12.12.17",
-    "commander": "^4.0.1"
+    "commander": "^4.0.1",
+    "prettier": "^1.19.1"
   },
   "devDependencies": {
     "lerna": "^3.16.4",
@@ -35,7 +36,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna exec --concurrency 1 --stream -- lint-staged"
+      "pre-commit": "npm install"
     }
   }
 }
