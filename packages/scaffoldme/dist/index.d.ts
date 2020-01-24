@@ -1,6 +1,8 @@
-import { Project } from "@scaffoldme/core";
-export * from "./actions";
-export * from "./input";
-export * from "./loader";
-export declare let project: Project | undefined;
-export declare const loadScaffoldmeJson: () => Promise<Project | undefined>;
+import { ScaffoldmeContext } from './definitions';
+import { Executor } from './lib/executor';
+export * from './constants';
+export * from './definitions';
+export * from './guards';
+export declare function generateContext(): Promise<ScaffoldmeContext>;
+export declare function loadExecutor(ctx: ScaffoldmeContext, pargv: string[]): Promise<Executor>;
+export declare function run(pargv: string[]): Promise<void>;

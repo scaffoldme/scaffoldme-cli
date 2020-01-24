@@ -7,7 +7,7 @@
     "dist"
   ],
   "bin": {
-    "scaffoldmee": "./bin/scaffoldme.js"
+    "scaffoldme": "./bin/scaffoldme"
   },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
@@ -18,7 +18,31 @@
   },
   "devDependencies": {
     "typescript": "^3.6.3",
-    "@types/commander": "^2.9.1"
+    "@types/commander": "^2.9.1",
+    "@types/boxen": "^3.0.1",
+    "@types/debug": "^4.1.1",
+    "@types/diff": "^4.0.0",
+    "@types/fs-extra": "^7.0.0",
+    "@types/inquirer": "0.0.43",
+    "@types/jest": "^24.0.3",
+    "@types/lodash": "^4.14.104",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "~8.10.54",
+    "@types/open": "~6.1.0",
+    "@types/os-name": "^3.1.0",
+    "@types/semver": "^6.0.0",
+    "@types/split2": "^2.1.6",
+    "@types/tar": "^4.0.0",
+    "@types/through2": "^2.0.33",
+    "@types/update-notifier": "^2.0.0",
+    "@types/uuid": "^3.4.3",
+    "jest": "^23.0.1",
+    "jest-cli": "^24.1.0",
+    "lint-staged": "^8.0.0",
+    "rimraf": "^2.6.2",
+    "source-map": "^0.7.0",
+    "ts-jest": "^23.10.1",
+    "tslint": "^5.9.1"
   },
   "dependencies": {
     "@scaffoldme/core": "^1.0.0",
@@ -26,6 +50,34 @@
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
-    "jsonfile": "^5.0.0"
+    "jsonfile": "^5.0.0",
+    "@ionic/cli-framework": "2.1.7",
+    "@ionic/discover": "2.0.6",
+    "@ionic/utils-array": "1.2.1",
+    "@ionic/utils-fs": "2.0.7",
+    "@ionic/utils-network": "1.0.5",
+    "@ionic/utils-process": "1.0.5",
+    "@ionic/utils-stream": "2.0.4",
+    "@ionic/utils-subprocess": "1.0.8",
+    "@ionic/utils-terminal": "1.0.5",
+    "boxen": "^4.1.0",
+    "chalk": "^2.3.0",
+    "debug": "^4.0.0",
+    "diff": "^4.0.1",
+    "leek": "0.0.24",
+    "lodash": "^4.17.5",
+    "open": "^6.1.0",
+    "os-name": "^3.1.0",
+    "semver": "^6.0.0",
+    "split2": "^3.0.0",
+    "ssh-config": "^1.1.1",
+    "stream-combiner2": "^1.1.1",
+    "superagent": "^4.1.0",
+    "superagent-proxy": "^2.0.0",
+    "tar": "^4.3.0",
+    "through2": "^3.0.0",
+    "tslib": "^1.9.0",
+    "update-notifier": "^2.3.0",
+    "uuid": "^3.2.1"
   }
 }
