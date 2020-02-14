@@ -6,11 +6,10 @@ export * from "./actions";
 export * from "./input";
 export * from "./loader";
 
-let projectJson: Project | undefined;
-export let project: Project | undefined = projectJson;
+// let projectJson: Project | undefined;
+// export let project: Project | undefined = projectJson;
 
 export const loadScaffoldmeJson = async () => {
-  projectJson = await jsonfile.readFile(PROJECT_FILE);
-  project = projectJson;
+  const projectJson: Project = await jsonfile.readFile(PROJECT_FILE);
   return projectJson;
 };

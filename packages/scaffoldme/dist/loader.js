@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const utils_1 = require("@scaffoldme/utils");
-const chalk_1 = require("chalk");
+const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const installAction_1 = require("./actions/installAction");
 const installCommand_1 = require("./commands/installCommand");
 class Loader {

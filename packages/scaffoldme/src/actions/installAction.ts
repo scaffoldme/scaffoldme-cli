@@ -1,10 +1,9 @@
 // import { displayNScaffoldmeInformation } from './infoAction'
-import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
-import chalk from "chalk";
-// import { loadScaffoldmeJson } from "..";
 import { Input } from "../input";
+import { Environment } from "../lib/environment";
+import { Project } from "../lib/project";
 import { AbstractAction } from "./abstractAction";
-const fs = require("fs");
+const ora = require("ora");
 
 export class InstallAction extends AbstractAction {
   /**
@@ -12,22 +11,36 @@ export class InstallAction extends AbstractAction {
    * @param  {Input[]} options
    */
   public async handle(inputs: Input[], options: Input[]) {
-    console.log("install Action");
+    const project = new Project();
+    const environment = new Environment();
+    project.load();
 
-    await checkScaffoldmeJsonFile();
-    console.log(this._project);
+    //const spinner = ora('Loading unicorns').start();
+    const spinner = ora("Loading unicorns").start();
+    // spinner.start();
+    try {
+      const environments = project.getEnvironments();
+      for (let index = 0; index < environments.length; index++) {
+        // console.log(environments[index]);
+        await environment.install(environments[index]);
+      }
+      spinner.succeed();
+    } catch {
+      console.info("failed");
+      spinner.fail();
+    }
 
-    //  console.log(await loadScaffoldmeJson());
-
-    //console.log(this.project);
-
-    // if (project.logo == "new project") process.exit(0);
+    /* const environments = project.getEnvironments();
+    for (let index = 0; index < environments.length; index++) {
+      console.log(environments[index]);
+    } */
   }
 }
 
 /**
  * Check if scaffoldme file exist
- */
+/*  
+**
 const checkScaffoldmeJsonFile = async () => {
   try {
     if (!fs.existsSync(PROJECT_FILE)) {
@@ -39,3 +52,4 @@ const checkScaffoldmeJsonFile = async () => {
     process.exit(0);
   }
 };
+ */

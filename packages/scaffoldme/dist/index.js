@@ -5,10 +5,9 @@ const utils_1 = require("@scaffoldme/utils");
 const jsonfile = require("jsonfile");
 tslib_1.__exportStar(require("./actions"), exports);
 tslib_1.__exportStar(require("./loader"), exports);
-let projectJson;
-exports.project = projectJson;
+// let projectJson: Project | undefined;
+// export let project: Project | undefined = projectJson;
 exports.loadScaffoldmeJson = async () => {
-    projectJson = await jsonfile.readFile(utils_1.PROJECT_FILE);
-    exports.project = projectJson;
+    const projectJson = await jsonfile.readFile(utils_1.PROJECT_FILE);
     return projectJson;
 };

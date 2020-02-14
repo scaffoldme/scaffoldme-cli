@@ -17,7 +17,7 @@
     "build:sdk-projects": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-projects-api-master.as51985.net/openapi.json -o ./src/api/generate/projects-api -c generator-config.json -g typescript-axios"
   },
   "dependencies": {
-    "@openapitools/openapi-generator-cli": "^1.0.8-4.2.2",
+    "@openapitools/openapi-generator-cli": "^1.0.10-4.2.3",
     "@scaffoldme/utils": "^1.0.0",
     "axios": "^0.18.1",
     "commander": "^3.0.2",

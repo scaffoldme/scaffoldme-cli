@@ -12,9 +12,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 // Some imports not used depending on template conditions
 // @ts-ignore
-const axios_1 = require("axios");
+const axios_1 = tslib_1.__importDefault(require("axios"));
 exports.BASE_PATH = "https://web-technologies-api-master.as51985.net".replace(/\/+$/, "");
 /**
  *

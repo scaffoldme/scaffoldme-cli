@@ -12,8 +12,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const globalImportUrl = require("url");
-const axios_1 = require("axios");
+const tslib_1 = require("tslib");
+const globalImportUrl = tslib_1.__importStar(require("url"));
+const axios_1 = tslib_1.__importDefault(require("axios"));
 // Some imports not used depending on template conditions
 // @ts-ignore
 const base_1 = require("../base");

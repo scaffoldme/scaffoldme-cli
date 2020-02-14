@@ -1,17 +1,22 @@
 {
-  "id": 1,
-  "name": "ETNA 168h",
-  "description": "New version ETNA 168h",
-  "frontEnds": [
+  "id": 0,
+  "name": "Project name",
+  "description": "description",
+  "logo": "",
+  "environmentsInfos": [
     {
-      "git": "git@github.com:scaffoldme/frontoffice.git",
-      "name": "frontoffice"
-    }
-  ],
-  "apis": [
+      "id": 0,
+      "name": "frontoffice",
+      "description": "FrontEnd description",
+      "depot": "https://github.com/scaffoldme/frontoffice",
+      "environmentType": "frontend"
+    },
     {
-      "git": "git@github.com:scaffoldme/backoffice.git",
-      "name": "backoffice"
+      "id": 1,
+      "name": "backoffice",
+      "description": "API description",
+      "depot": "https://github.com/scaffoldme/backoffice",
+      "environmentType": "api"
     }
   ]
 }

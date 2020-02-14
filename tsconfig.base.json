@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "allowUnreachableCode": false,
-      "declaration": true,
-      "importHelpers": true,
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "noFallthroughCasesInSwitch": true,
-      "noUnusedLocals": true,
-      "pretty": true,
-      "strict": true,
-      "target": "es2018",
-      "types": [],
-      "lib": ["es2018"]
-    }
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "declaration": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "es2018",
+    "types": [],
+    "lib": ["es2018"]
+  }
 }
