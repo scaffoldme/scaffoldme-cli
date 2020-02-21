@@ -1,4 +1,5 @@
 // import { displayNScaffoldmeInformation } from './infoAction'
+import chalk from "chalk";
 import { Input } from "../input";
 import { Environment } from "../lib/environment";
 import { Project } from "../lib/project";
@@ -16,7 +17,10 @@ export class InstallAction extends AbstractAction {
     project.load();
 
     //const spinner = ora('Loading unicorns').start();
-    const spinner = ora("Loading unicorns").start();
+    const spinner = ora(
+      chalk.yellowBright("Setup project progress .... ")
+    ).start();
+    console.info();
     // spinner.start();
     try {
       const environments = project.getEnvironments();
@@ -24,7 +28,7 @@ export class InstallAction extends AbstractAction {
         // console.log(environments[index]);
         await environment.install(environments[index]);
       }
-      spinner.succeed();
+      spinner.succeed("Steup project done !");
     } catch {
       console.info("failed");
       spinner.fail();

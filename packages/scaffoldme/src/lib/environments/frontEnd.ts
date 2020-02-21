@@ -6,7 +6,6 @@ var shell = require("shelljs");
 
 export class frontEnd {
   public static async install(environment: EnvironmentInfosWithRelations) {
-    console.log(environment.environmentType);
     if (
       shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0
     ) {
@@ -42,7 +41,12 @@ export class frontEnd {
           `Installation du Framework ${front.framework.technologyName} `
         )
       );
-      shell.mkdir("-p", `${front.framework.technologyName}`);
+      const { stdout, stderr } = await shell.exec(
+        "/home/mahamadou/Documents/Projects/nest-cli/node_modules/.bin/schematics @nestjs/schematics:application --name=nest-app --directory=undefined --no-dry-run --no-skip-git --package-manager=undefined --language=ts --collection=@nestjs/schematics"
+      );
+      console.log({ stdout, stderr });
+
+      // shell.mkdir("-p", `${front.framework.technologyName}`);
     } else {
       console.log(
         chalk.red(`Version ${front.framework.versionId} is not supported`)

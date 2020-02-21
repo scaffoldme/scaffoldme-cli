@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+// import { displayNScaffoldmeInformation } from './infoAction'
+const chalk_1 = tslib_1.__importDefault(require("chalk"));
 const environment_1 = require("../lib/environment");
 const project_1 = require("../lib/project");
 const abstractAction_1 = require("./abstractAction");
@@ -14,7 +17,8 @@ class InstallAction extends abstractAction_1.AbstractAction {
         const environment = new environment_1.Environment();
         project.load();
         //const spinner = ora('Loading unicorns').start();
-        const spinner = ora("Loading unicorns").start();
+        const spinner = ora(chalk_1.default.yellowBright("Setup project progress .... ")).start();
+        console.info();
         // spinner.start();
         try {
             const environments = project.getEnvironments();
@@ -22,7 +26,7 @@ class InstallAction extends abstractAction_1.AbstractAction {
                 // console.log(environments[index]);
                 await environment.install(environments[index]);
             }
-            spinner.succeed();
+            spinner.succeed("Steup project done !");
         }
         catch (_a) {
             console.info("failed");

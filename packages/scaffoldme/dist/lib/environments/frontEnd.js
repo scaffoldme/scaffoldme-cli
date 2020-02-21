@@ -7,7 +7,6 @@ const fs = tslib_1.__importStar(require("fs"));
 var shell = require("shelljs");
 class frontEnd {
     static async install(environment) {
-        console.log(environment.environmentType);
         if (shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0) {
             shell.cd(environment.name);
             if (!fs.existsSync(utils_1.PROJECT_FILE)) {
@@ -32,7 +31,9 @@ class frontEnd {
         var _a;
         if (_a = front.framework.versionId, (_a !== null && _a !== void 0 ? _a : front.framework.versionId === "8.0.0")) {
             console.log(chalk_1.default.yellowBright(`Installation du Framework ${front.framework.technologyName} `));
-            shell.mkdir("-p", `${front.framework.technologyName}`);
+            const { stdout, stderr } = await shell.exec("/home/mahamadou/Documents/Projects/nest-cli/node_modules/.bin/schematics @nestjs/schematics:application --name=nest-app --directory=undefined --no-dry-run --no-skip-git --package-manager=undefined --language=ts --collection=@nestjs/schematics");
+            console.log({ stdout, stderr });
+            // shell.mkdir("-p", `${front.framework.technologyName}`);
         }
         else {
             console.log(chalk_1.default.red(`Version ${front.framework.versionId} is not supported`));
