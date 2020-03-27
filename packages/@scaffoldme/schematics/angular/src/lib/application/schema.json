@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsLoopbackApplication",
+  "title": "Loopback Application Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the application.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "author": {
+      "type": "string",
+      "description": "Loopback application author.",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "description": "Loopback application description.",
+      "default": ""
+    },
+    "directory": {
+      "type": "string",
+      "description": "Loopback application destination directory"
+    },
+    "version": {
+      "type": "string",
+      "description": "Loopback application version.",
+      "default": "0.0.1"
+    },
+    "language": {
+      "type": "string",
+      "description": "Loopback application language."
+    },
+    "packageManager": {
+      "type": "string",
+      "description": "Loopback application package manager."
+    },
+    "dependencies": {
+      "type": "string",
+      "description": "Loopback application dependencies."
+    },
+    "devDependencies": {
+      "type": "string",
+      "description": "Loopback application development dependencies."
+    },
+    "packageJsonName": {
+      "description": "The package json file .",
+      "type": "string",
+      "default": "package"
+    },
+    "readmeName": {
+      "description": "The package json file .",
+      "type": "string",
+      "default": "README"
+    }
+  }
+}

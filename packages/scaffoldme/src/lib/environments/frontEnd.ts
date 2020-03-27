@@ -43,10 +43,13 @@ export class frontEnd {
           `Installation du Framework ${front.framework.technologyName} `
         )
       );
-      const { stdout, stderr } = await shell.exec(
-        "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics:loopback/application"
+      await shell.exec(
+        "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-angular:application"
       );
-      console.log({ stdout, stderr });
+      /*  const { stdout, stderr } = await shell.exec(
+        "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-angular:application"
+      );
+      console.log({ stdout, stderr }); */
 
       // shell.mkdir("-p", `${front.framework.technologyName}`);
     } else {

@@ -30,6 +30,7 @@
     "@scaffoldme/core": "^1.0.0",
     "@scaffoldme/utils": "^1.0.0",
     "@scaffoldme/schematics-loopback": "1.0.0",
+    "@scaffoldme/schematics-angular": "1.0.0",
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",

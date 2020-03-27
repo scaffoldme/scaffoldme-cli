@@ -31,8 +31,11 @@ class frontEnd {
         var _a;
         if (_a = front.framework.versionId, (_a !== null && _a !== void 0 ? _a : front.framework.versionId === "8.0.0")) {
             console.log(chalk_1.default.yellowBright(`Installation du Framework ${front.framework.technologyName} `));
-            const { stdout, stderr } = await shell.exec("/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics:loopback/application");
-            console.log({ stdout, stderr });
+            await shell.exec("/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-angular:application");
+            /*  const { stdout, stderr } = await shell.exec(
+              "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-angular:application"
+            );
+            console.log({ stdout, stderr }); */
             // shell.mkdir("-p", `${front.framework.technologyName}`);
         }
         else {
