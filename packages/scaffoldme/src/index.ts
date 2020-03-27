@@ -4,6 +4,7 @@ const jsonfile = require("jsonfile");
 
 export * from "./actions";
 export * from "./input";
+export * from "./lib";
 export * from "./loader";
 
 // let projectJson: Project | undefined;

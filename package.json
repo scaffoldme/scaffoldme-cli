@@ -11,7 +11,7 @@
   "author": "Scaffoldme Team",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "lerna bootstrap && npm run build",
+    "postinstall": "lerna bootstrap && npm run build",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "lerna publish",

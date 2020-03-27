@@ -14,10 +14,12 @@ export class frontEnd {
         console.error(chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
         process.exit(0);
       }
-      const data: FrontEnd = JSON.parse(fs.readFileSync(PROJECT_FILE, "utf8"));
-      switch (data.framework.technologyName) {
+      const jsonScaffoldmeFrontEnd: FrontEnd = JSON.parse(
+        fs.readFileSync(PROJECT_FILE, "utf8")
+      );
+      switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
         case "Angular":
-          await this.installAngularFramework(data);
+          await this.installAngularFramework(jsonScaffoldmeFrontEnd);
           break;
         case "React":
           await this.installReactFramework();
@@ -26,7 +28,7 @@ export class frontEnd {
         default:
           console.log(
             chalk.red(
-              `${data.framework.technologyName} is not supported right now`
+              `${jsonScaffoldmeFrontEnd.framework.technologyName} is not supported right now`
             )
           );
           process.exit();
@@ -42,7 +44,7 @@ export class frontEnd {
         )
       );
       const { stdout, stderr } = await shell.exec(
-        "/home/mahamadou/Documents/Projects/nest-cli/node_modules/.bin/schematics @nestjs/schematics:application --name=nest-app --directory=undefined --no-dry-run --no-skip-git --package-manager=undefined --language=ts --collection=@nestjs/schematics"
+        "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics:loopback/application"
       );
       console.log({ stdout, stderr });
 

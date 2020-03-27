@@ -1,18 +1,24 @@
 import {
   BaseEnvironment,
-  EnvironmentInfosWithRelations
+  EnvironmentInfosWithRelations,
+  Input
 } from "@scaffoldme/core";
 import chalk from "chalk";
-import { frontEnd } from "./environments/frontEnd";
+// import { frontEnd } from "./environments/frontEnd";
+import { backEnd } from "./environments/backEnd";
 
 export class Environment implements BaseEnvironment {
-  async install(environment: EnvironmentInfosWithRelations) {
+  async install(
+    environment: EnvironmentInfosWithRelations,
+    inputs: Input[],
+    options: Input[]
+  ) {
     switch (environment.environmentType) {
       case "frontend":
-        await frontEnd.install(environment);
+        // await frontEnd.install(environment);
         break;
       case "api":
-        console.log("api");
+        await backEnd.install(environment, inputs, options);
         break;
 
       default:

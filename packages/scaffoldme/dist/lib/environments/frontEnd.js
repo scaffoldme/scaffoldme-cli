@@ -13,16 +13,16 @@ class frontEnd {
                 console.error(chalk_1.default.red(utils_1.MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
                 process.exit(0);
             }
-            const data = JSON.parse(fs.readFileSync(utils_1.PROJECT_FILE, "utf8"));
-            switch (data.framework.technologyName) {
+            const jsonScaffoldmeFrontEnd = JSON.parse(fs.readFileSync(utils_1.PROJECT_FILE, "utf8"));
+            switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
                 case "Angular":
-                    await this.installAngularFramework(data);
+                    await this.installAngularFramework(jsonScaffoldmeFrontEnd);
                     break;
                 case "React":
                     await this.installReactFramework();
                     break;
                 default:
-                    console.log(chalk_1.default.red(`${data.framework.technologyName} is not supported right now`));
+                    console.log(chalk_1.default.red(`${jsonScaffoldmeFrontEnd.framework.technologyName} is not supported right now`));
                     process.exit();
             }
         }
@@ -31,7 +31,7 @@ class frontEnd {
         var _a;
         if (_a = front.framework.versionId, (_a !== null && _a !== void 0 ? _a : front.framework.versionId === "8.0.0")) {
             console.log(chalk_1.default.yellowBright(`Installation du Framework ${front.framework.technologyName} `));
-            const { stdout, stderr } = await shell.exec("/home/mahamadou/Documents/Projects/nest-cli/node_modules/.bin/schematics @nestjs/schematics:application --name=nest-app --directory=undefined --no-dry-run --no-skip-git --package-manager=undefined --language=ts --collection=@nestjs/schematics");
+            const { stdout, stderr } = await shell.exec("/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics:loopback/application");
             console.log({ stdout, stderr });
             // shell.mkdir("-p", `${front.framework.technologyName}`);
         }

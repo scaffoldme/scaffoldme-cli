@@ -24,8 +24,12 @@
     "@types/shelljs": "0.8.6"
   },
   "dependencies": {
+    "@angular-devkit/core": "7.3.8",
+    "@angular-devkit/schematics": "7.3.8",
+    "@angular-devkit/schematics-cli": "0.13.8",
     "@scaffoldme/core": "^1.0.0",
     "@scaffoldme/utils": "^1.0.0",
+    "@scaffoldme/schematics-loopback": "1.0.0",
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
