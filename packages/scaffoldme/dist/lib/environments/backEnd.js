@@ -18,6 +18,7 @@ class backEnd {
             switch ((_a = jsonScaffoldmeBackEnd.framework) === null || _a === void 0 ? void 0 : _a.technologyName) {
                 case "Loopback":
                     await this.installLoopackFramework(jsonScaffoldmeBackEnd, inputs, options);
+                    shell.cd("..");
                     break;
                 default:
                     console.log(chalk_1.default.red(`${(_b = jsonScaffoldmeBackEnd.framework) === null || _b === void 0 ? void 0 : _b.technologyName} is not supported right now`));

@@ -17,9 +17,11 @@ class frontEnd {
             switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
                 case "Angular":
                     await this.installAngularFramework(jsonScaffoldmeFrontEnd);
+                    shell.cd("..");
                     break;
                 case "React":
                     await this.installReactFramework();
+                    shell.cd("..");
                     break;
                 default:
                     console.log(chalk_1.default.red(`${jsonScaffoldmeFrontEnd.framework.technologyName} is not supported right now`));

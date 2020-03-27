@@ -29,6 +29,7 @@ export class backEnd {
             inputs,
             options
           );
+          shell.cd("..");
           break;
 
         default:
