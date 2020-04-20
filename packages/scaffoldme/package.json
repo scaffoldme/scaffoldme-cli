@@ -19,9 +19,7 @@
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -Rf dist",
-    "r": "rm -Rf backoffice && rm -Rf frontoffice",
-    "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
-    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
+    "r": "rm -Rf backoffice && rm -Rf frontoffice"
   },
   "devDependencies": {
     "typescript": "^3.6.3",

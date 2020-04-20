@@ -18,9 +18,8 @@
     "watch": "lerna run watch --parallel",
     "link": "lerna exec npm link",
     "start": "ts-node bin/scaffoldme.ts",
-    "sc": "node build/bin/scaffoldme.js",
-    "st": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "go": "npm i && npm run bootstrap && npm run build"
+    "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
+    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
   },
   "dependencies": {
     "@types/node": "^12.12.17",
