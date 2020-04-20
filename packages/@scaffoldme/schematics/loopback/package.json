@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/schematics-loopback",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -14,7 +14,8 @@
     "build": "rm -rf dist && tsc",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -Rf dist"
+    "clean": "rm -Rf dist",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@angular-devkit/schematics": "9.0.3",
