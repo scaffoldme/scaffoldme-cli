@@ -124,3 +124,15 @@ package-lock.json*
 npm-debug.log*
 lerna-debug.log
 build
+
+
+*.sw*
+*.cookies
+.idea/
+.coveralls.yml
+.changelog/
+
+/docs
+dist
+
+package-lock.json*
