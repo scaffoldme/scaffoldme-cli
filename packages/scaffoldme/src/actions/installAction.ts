@@ -25,7 +25,7 @@ export class InstallAction extends AbstractAction {
     try {
       const environments = project.getEnvironments();
       for (let index = 0; index < environments.length; index++) {
-        // console.log(environments[index]);
+        console.log(environments[index]);
         await environment.install(environments[index], inputs, options);
       }
       spinner.succeed("Steup project done !");
