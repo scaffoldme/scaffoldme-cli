@@ -20,7 +20,7 @@
     "start": "ts-node bin/scaffoldme.ts",
     "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
     "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits",
-    "publish": "lerna pusblish"
+    "publish": "lerna pusblish --exact --no-git-tag-version --no-push"
   },
   "dependencies": {
     "@types/node": "^12.12.17",
