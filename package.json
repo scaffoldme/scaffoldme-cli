@@ -1,7 +1,7 @@
 {
   "name": "scaffoldme-cli",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "keywords": [
     "cli",
     "scaffoldme",
