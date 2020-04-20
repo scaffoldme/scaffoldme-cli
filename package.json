@@ -1,7 +1,7 @@
 {
   "name": "scaffoldme-cli",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "keywords": [
     "cli",
     "scaffoldme",
@@ -19,7 +19,8 @@
     "link": "lerna exec npm link",
     "start": "ts-node bin/scaffoldme.ts",
     "publish:testing": "lerna publish prerelease --preid=testing --exact --no-git-tag-version --no-push --dist-tag=testing",
-    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
+    "publish:ci": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits",
+    "publish": "lerna pusblish"
   },
   "dependencies": {
     "@types/node": "^12.12.17",
