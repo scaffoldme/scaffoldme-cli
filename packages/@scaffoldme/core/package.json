@@ -14,7 +14,8 @@
     "clean": "rm -Rf dist",
     "build:sdk": "npm run build:sdk-techologies && npm run build:sdk-projects",
     "build:sdk-techologies": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-technologies-api-master.as51985.net/openapi.json -o ./src/api/generate/technologies-api -c generator-config.json -g typescript-axios",
-    "build:sdk-projects": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-projects-api-master.as51985.net/openapi.json -o ./src/api/generate/projects-api -c generator-config.json -g typescript-axios"
+    "build:sdk-projects": "./node_modules/@openapitools/openapi-generator-cli/bin/openapi-generator generate -i https://web-projects-api-master.as51985.net/openapi.json -o ./src/api/generate/projects-api -c generator-config.json -g typescript-axios",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^1.0.10-4.2.3",
