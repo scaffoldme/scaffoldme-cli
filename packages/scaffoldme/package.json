@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "index.d.ts",
   "files": [
@@ -29,10 +29,10 @@
     "@angular-devkit/core": "7.3.8",
     "@angular-devkit/schematics": "7.3.8",
     "@angular-devkit/schematics-cli": "0.13.8",
-    "@scaffoldme/core": "1.0.2",
-    "@scaffoldme/schematics-angular": "1.0.2",
-    "@scaffoldme/schematics-loopback": "1.0.2",
-    "@scaffoldme/utils": "1.0.2",
+    "@scaffoldme/core": "1.0.3",
+    "@scaffoldme/schematics-angular": "1.0.3",
+    "@scaffoldme/schematics-loopback": "1.0.3",
+    "@scaffoldme/utils": "1.0.3",
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
