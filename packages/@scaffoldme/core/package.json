@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -18,15 +18,15 @@
   },
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^1.0.10-4.2.3",
-    "@scaffoldme/utils": "^1.0.0",
+    "@scaffoldme/utils": "1.0.1",
     "axios": "^0.18.1",
     "commander": "^3.0.2",
     "jsonfile": "^5.0.0",
     "os-name": "3.1.0"
   },
   "devDependencies": {
+    "@types/commander": "^2.9.1",
     "tslint": "^5.9.1",
-    "typescript": "^3.4.5",
-    "@types/commander": "^2.9.1"
+    "typescript": "^3.4.5"
   }
 }

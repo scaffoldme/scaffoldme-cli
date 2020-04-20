@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "index.d.ts",
   "files": [
@@ -22,19 +22,19 @@
     "r": "rm -Rf backoffice && rm -Rf frontoffice"
   },
   "devDependencies": {
-    "typescript": "^3.6.3",
-    "@types/ora": "3.1.0",
     "@types/commander": "^2.9.1",
-    "@types/shelljs": "0.8.6"
+    "@types/ora": "3.1.0",
+    "@types/shelljs": "0.8.6",
+    "typescript": "^3.6.3"
   },
   "dependencies": {
     "@angular-devkit/core": "7.3.8",
     "@angular-devkit/schematics": "7.3.8",
     "@angular-devkit/schematics-cli": "0.13.8",
-    "@scaffoldme/core": "^1.0.0",
-    "@scaffoldme/utils": "^1.0.0",
-    "@scaffoldme/schematics-loopback": "1.0.0",
-    "@scaffoldme/schematics-angular": "1.0.0",
+    "@scaffoldme/core": "1.0.1",
+    "@scaffoldme/schematics-angular": "1.0.1",
+    "@scaffoldme/schematics-loopback": "1.0.1",
+    "@scaffoldme/utils": "1.0.1",
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
