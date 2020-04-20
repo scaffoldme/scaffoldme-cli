@@ -14,8 +14,7 @@
     "build": "rm -rf dist && tsc",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -Rf dist",
-    "prepublishOnly": "npm run build"
+    "clean": "rm -Rf dist"
   },
   "dependencies": {
     "@angular-devkit/schematics": "9.0.3",
@@ -44,5 +43,6 @@
     "ts-node": "8.6.2",
     "typescript": "3.8.2"
   },
-  "schematics": "./dist/collection.json"
+  "schematics": "./dist/collection.json",
+  "gitHead": "5d94aebca430568fdd8a5e1db81a44d21743605a"
 }
