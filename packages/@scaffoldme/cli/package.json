@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/cli",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -45,10 +45,10 @@
     "@types/node": "^12.11.7",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
+    "cpx": "1.5.0",
     "jsonfile": "^5.0.0",
     "ora": "4.0.3",
-    "shelljs": "^0.8.3",
-    "cpx": "1.5.0"
+    "shelljs": "^0.8.3"
   },
   "gitHead": "8fd15f5beffef9c120354568e93e6b0022dd5536"
 }
