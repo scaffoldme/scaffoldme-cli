@@ -13,6 +13,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scaffoldme/scaffoldme-cli.git"
+  },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
     "build": "npm run clean && tsc",
