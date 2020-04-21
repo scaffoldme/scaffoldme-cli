@@ -1,14 +1,11 @@
 {
   "name": "@scaffoldme/cli",
   "version": "1.0.11",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "bin": {
-    "sc": "./bin/scaffoldme.js",
-    "scaffoldme": "./bin/scaffoldme.js"
+    "sc": "./bin/scaffoldme",
+    "scaffoldme": "./bin/scaffoldme"
   },
   "publishConfig": {
     "access": "public"
@@ -17,13 +14,17 @@
     "type": "git",
     "url": "https://github.com/scaffoldme/scaffoldme-cli.git"
   },
+  "bugs": {
+    "url": "https://github.com/scaffoldme/scaffoldme-cli/issues"
+  },
+  "license": "MIT",
   "scripts": {
+    "clean": "rimraf index.* loader.* input.* definition.* lib commands actions",
+    "lint": "tslint --project tsconfig.json",
+    "build": "npm run clean && tsc",
     "watch": "tsc -w --preserveWatchOutput",
     "copy:bin": "ncp bin dist/bin",
-    "build": "npm run clean && tsc && npm run copy:bin",
-    "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -Rf dist",
     "r": "rm -Rf backoffice && rm -Rf frontoffice",
     "prepublishOnly": "npm run build"
   },
@@ -32,7 +33,8 @@
     "@types/ora": "3.1.0",
     "@types/shelljs": "0.8.6",
     "ncp": "^2.0.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "rimraf": "^3.0.0"
   },
   "dependencies": {
     "@angular-devkit/core": "7.3.8",

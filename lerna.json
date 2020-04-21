@@ -1,4 +1,9 @@
 {
   "version": "independent",
-  "packages": ["packages/**"]
+  "packages": ["packages/**"],
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  }
 }
