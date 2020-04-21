@@ -2,6 +2,7 @@ import { Api, EnvironmentInfosWithRelations, Input } from "@scaffoldme/core";
 import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
 import chalk from "chalk";
 import * as fs from "fs";
+import { SchematicRunner } from "../runners/schematic.runner";
 var shell = require("shelljs");
 
 export class backEnd {
@@ -54,8 +55,9 @@ export class backEnd {
       )
     );
 
+    let runner = new SchematicRunner();
     await shell.exec(
-      "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-loopback:application"
+      `${runner.findClosestSchematicsBinary()} @scaffoldme/schematics-loopback:application`
     );
 
     // await generateApplicationFiles(inputs, options);

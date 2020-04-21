@@ -2,7 +2,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander = require("commander");
-const src_1 = require("../dist/loader");
+const src_1 = require("../loader");
 const bootstrap = () => {
   const program = commander;
   program
