@@ -19,7 +19,8 @@
   },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
-    "build": "npm run clean && tsc",
+    "copy:bin": "ncp bin dist/bin",
+    "build": "npm run clean && tsc && npm run copy:bin",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -Rf dist",
@@ -30,6 +31,7 @@
     "@types/commander": "^2.9.1",
     "@types/ora": "3.1.0",
     "@types/shelljs": "0.8.6",
+    "ncp": "^2.0.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
@@ -45,7 +47,8 @@
     "commander": "^3.0.2",
     "jsonfile": "^5.0.0",
     "ora": "4.0.3",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "cpx": "1.5.0"
   },
   "gitHead": "8fd15f5beffef9c120354568e93e6b0022dd5536"
 }
