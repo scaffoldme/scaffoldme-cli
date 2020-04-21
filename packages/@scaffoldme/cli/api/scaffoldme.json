@@ -1,0 +1,57 @@
+{
+  "name": "api",
+  "entities": [
+    {
+      "id": "f97b6443-e873-4eb8-abdc-913f8ec161a9",
+      "name": "User",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "number",
+          "isRequired": false,
+          "isUnique": false,
+          "id": "cac2e72e-80b5-4520-95af-8a1eb006f4d0"
+        }
+      ],
+      "relations": [
+        {
+          "name": "Role",
+          "type": "hasMany",
+          "id": "1976e831-a726-4a26-bb7c-a52963746846",
+          "foreignKey": "",
+          "primaryKey": "",
+          "model": ""
+        }
+      ]
+    },
+    {
+      "id": "2cca0a9f-c855-4dc4-bff0-5e26a51eecda",
+      "name": "Role",
+      "attributes": [
+        {
+          "name": "id",
+          "type": "number",
+          "isRequired": false,
+          "isUnique": false,
+          "id": "454f1498-24fe-423b-812d-d8c3868a1aaa"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "modules": [
+    {
+      "technologyId": 17,
+      "technologyName": "Socket.io",
+      "versionName": "2.2",
+      "versionId": 193
+    }
+  ],
+  "description": "description de l'api",
+  "framework": {
+    "technologyId": 11,
+    "technologyName": "Loopback",
+    "versionName": "4.0.0",
+    "versionId": 11
+  }
+}

@@ -1,22 +1,21 @@
 {
-  "id": 0,
-  "name": "Project name",
-  "description": "description",
-  "logo": "",
+  "name": "Nom du projet",
+  "description": "Une description",
   "environmentsInfos": [
     {
-      "id": 0,
-      "name": "frontoffice",
-      "description": "FrontEnd description",
-      "depot": "https://github.com/scaffoldme/frontoffice",
+      "name": "Web-app",
+      "description": "description de la web-app",
       "environmentType": "frontend"
     },
     {
-      "id": 1,
-      "name": "backoffice",
-      "description": "API description",
-      "depot": "https://github.com/scaffoldme/backoffice",
+      "name": "api",
+      "description": "description de l'api",
       "environmentType": "api"
+    },
+    {
+      "name": "Bdd",
+      "description": "Decription de la bdd",
+      "environmentType": "storage"
     }
   ]
 }

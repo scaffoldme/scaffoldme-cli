@@ -11,37 +11,37 @@ export class backEnd {
     inputs: Input[],
     options: Input[]
   ) {
-    if (
+    /* if (
       shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0
-    ) {
-      shell.cd(environment.name);
-      if (!fs.existsSync(PROJECT_FILE)) {
-        console.error(chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
-        process.exit(0);
-      }
-      const jsonScaffoldmeBackEnd: Api = JSON.parse(
-        fs.readFileSync(PROJECT_FILE, "utf8")
-      );
-
-      switch (jsonScaffoldmeBackEnd.framework?.technologyName) {
-        case "Loopback":
-          await this.installLoopackFramework(
-            jsonScaffoldmeBackEnd,
-            inputs,
-            options
-          );
-          shell.cd("..");
-          break;
-
-        default:
-          console.log(
-            chalk.red(
-              `${jsonScaffoldmeBackEnd.framework?.technologyName} is not supported right now`
-            )
-          );
-          process.exit();
-      }
+    ) { */
+    shell.cd(environment.name);
+    if (!fs.existsSync(PROJECT_FILE)) {
+      console.error(chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
+      process.exit(0);
     }
+    const jsonScaffoldmeBackEnd: Api = JSON.parse(
+      fs.readFileSync(PROJECT_FILE, "utf8")
+    );
+
+    switch (jsonScaffoldmeBackEnd.framework?.technologyName) {
+      case "Loopback":
+        await this.installLoopackFramework(
+          jsonScaffoldmeBackEnd,
+          inputs,
+          options
+        );
+        shell.cd("..");
+        break;
+
+      default:
+        console.log(
+          chalk.red(
+            `${jsonScaffoldmeBackEnd.framework?.technologyName} is not supported right now`
+          )
+        );
+        process.exit();
+    }
+    // }
   }
 
   private static async installLoopackFramework(

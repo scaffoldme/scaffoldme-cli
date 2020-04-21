@@ -1,7 +1,7 @@
 import {
   BaseEnvironment,
   EnvironmentInfosWithRelations,
-  Input
+  Input,
 } from "@scaffoldme/core";
 import chalk from "chalk";
 import { backEnd } from "./environments/backEnd";
