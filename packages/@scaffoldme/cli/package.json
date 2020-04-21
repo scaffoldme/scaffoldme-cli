@@ -25,7 +25,7 @@
     "watch": "tsc -w --preserveWatchOutput",
     "copy:bin": "ncp bin dist/bin",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "r": "rm -Rf backoffice && rm -Rf frontoffice",
+    "r": "rm -Rf api && rm -Rf Bdd && rm -Rf Web-app",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {

@@ -1,1 +1,0 @@
-{"name":"Web-app","description":"description de la web-app","framework":{"technologyId":3,"technologyName":"Angular","versionName":"8.0.0","versionId":13},"modules":[{"technologyId":123,"technologyName":"Redux","versionName":"4.0.5","versionId":155}],"style":{"technologyId":5,"technologyName":"SASS","versionName":"3.6","versionId":191}}
