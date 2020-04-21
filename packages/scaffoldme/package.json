@@ -1,14 +1,17 @@
 {
   "name": "@scaffoldme/cli",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bin": {
     "sc": "./bin/scaffoldme.js",
     "scaffoldme": "./bin/scaffoldme.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "watch": "tsc -w --preserveWatchOutput",
@@ -17,8 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -Rf dist",
     "r": "rm -Rf backoffice && rm -Rf frontoffice",
-    "prepublishOnly": "npm run build",
-    "publish:npm": "npm publish --access public"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/commander": "^2.9.1",
