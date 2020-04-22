@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/cli",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "main": "./index.js",
   "types": "./index.d.ts",
   "bin": {
@@ -41,20 +41,20 @@
     "@angular-devkit/schematics": "7.3.8",
     "@angular-devkit/schematics-cli": "0.13.8",
     "@scaffoldme/core": "1.0.7",
-    "@scaffoldme/schematics-angular": "1.0.6",
-    "@scaffoldme/schematics-loopback": "1.0.6",
+    "@scaffoldme/schematics-angular": "1.0.7",
+    "@scaffoldme/schematics-loopback": "1.0.7",
     "@scaffoldme/utils": "1.0.7",
+    "@types/listr": "^0.13.0",
     "@types/node": "^12.11.7",
+    "boxen": "^3.1.0",
     "clear": "^0.1.0",
     "commander": "^3.0.2",
     "cpx": "1.5.0",
+    "execa": "^1.0.0",
     "jsonfile": "^5.0.0",
-    "ora": "4.0.3",
-    "shelljs": "^0.8.3",
     "listr": "^0.14.3",
-    "@types/listr": "^0.13.0",
-    "boxen": "^3.1.0",
-    "execa": "^1.0.0"
+    "ora": "4.0.3",
+    "shelljs": "^0.8.3"
   },
   "gitHead": "f7c13696c88b405f751f6bda932b7c2cf91bb8b5"
 }
