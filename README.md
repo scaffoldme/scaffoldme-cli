@@ -1,12 +1,29 @@
-## Install
+<a href="https://www.npmjs.com/~scaffoldme"><img src="https://img.shields.io/npm/v/@scaffoldme/cli.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~scaffoldme"><img src="https://img.shields.io/npm/l/@scaffoldme/cli.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~scaffoldme"><img src="https://img.shields.io/npm/dm/@scaffoldme/cli.svg" alt="NPM Downloads" /></a>
 
-Install [lerna](https://www.npmjs.com/package/lerna) for access to the `lerna` CLI.
+## Description
 
-#### Setup
+descripton
 
-1. `npm install` to install the dev tools.
-1. `npm run bootstrap` (will install package dependencies and link packages
-   together)
-1. Optionally `npm run link` to make `scaffoldme` and other bin files point to your
-   dev CLI.
-1. `npm run watch` will spin up TypeScript watch scripts for all packages.
+## Installation
+
+```
+$ npm install -g @scaffoldme/cli
+```
+
+## Usage
+
+```
+$ init | i
+
+$ start | str <container_name>
+
+$ stop | stp <container_name>
+```
+
+Learn more in the [official documentation](https://github.com/scaffoldme/scaffoldme-cli).
+
+## Stay in touch
+
+- Website - [https://scaffoldme.com](https://github.com/scaffoldme/scaffoldme-cli)
