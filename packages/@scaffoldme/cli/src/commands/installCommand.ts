@@ -1,4 +1,4 @@
-import { Command, CommanderStatic } from "commander";
+import { CommanderStatic } from "commander";
 import { Input } from "../input";
 //import { Collection } from '../lib/schematics';
 import { AbstractCommand } from "./abstractCommand";
@@ -31,12 +31,12 @@ export class InstallCommand extends AbstractCommand {
         '-c, --collection [collectionName]',
         'Collection that shall be used',
       ) */
-      .action(async (name: string, command: Command) => {
+      .action(async (name: string) => {
         const options: Input[] = [];
-        options.push({
-          name: "language",
-          value: !!command.language ? command.language : "ts",
-        });
+        // options.push({
+        //   name: "language",
+        //   value: !!command.language ? command.language : "ts",
+        // });
 
         const inputs: Input[] = [];
         inputs.push({ name: "name", value: name });

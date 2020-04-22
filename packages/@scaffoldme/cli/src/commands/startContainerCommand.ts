@@ -15,10 +15,10 @@ export class StartContainerCommand extends AbstractCommand {
       .description("Start container")
       .action(async (container_name: string, command: Command) => {
         const options: Input[] = [];
-        options.push({
+        /* options.push({
           name: "language",
           value: !!command.language ? command.language : "ts",
-        });
+        }); */
 
         const inputs: Input[] = [];
         inputs.push({ name: "container_name", value: container_name });
