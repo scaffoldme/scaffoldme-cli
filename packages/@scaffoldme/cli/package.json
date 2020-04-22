@@ -1,6 +1,6 @@
 {
   "name": "@scaffoldme/cli",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "./index.js",
   "types": "./index.d.ts",
   "bin": {
@@ -32,10 +32,10 @@
     "@types/commander": "^2.9.1",
     "@types/ora": "3.1.0",
     "@types/shelljs": "0.8.6",
+    "minimist": ">=1.2.3",
     "ncp": "^2.0.0",
     "rimraf": "^3.0.0",
-    "typescript": "^3.6.3",
-    "minimist": ">=1.2.3"
+    "typescript": "^3.6.3"
   },
   "dependencies": {
     "@angular-devkit/core": "9.0.3",
