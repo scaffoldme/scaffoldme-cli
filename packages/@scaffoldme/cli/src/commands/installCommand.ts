@@ -10,7 +10,7 @@ export class InstallCommand extends AbstractCommand {
    */
   public load(program: CommanderStatic) {
     program
-      .command("install [name] ")
+      .command("init")
       .alias("i")
       .description("Install Scaffoldme application with Json File run watch")
       /* .option(
@@ -35,7 +35,7 @@ export class InstallCommand extends AbstractCommand {
         const options: Input[] = [];
         options.push({
           name: "language",
-          value: !!command.language ? command.language : "ts"
+          value: !!command.language ? command.language : "ts",
         });
 
         const inputs: Input[] = [];
