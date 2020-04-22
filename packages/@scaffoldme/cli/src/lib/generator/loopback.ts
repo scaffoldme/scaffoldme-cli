@@ -1,4 +1,4 @@
-import { Api, Input } from "@scaffoldme/core";
+import { Api } from "@scaffoldme/core";
 import * as chalk from "chalk";
 import Listr from "listr";
 import { SchematicRunner } from "../runners/schematic.runner";
@@ -11,7 +11,7 @@ const pwdStdout = shell.exec("pwd").stdout;
 const pwd = pwdStdout.replace(/\n/g, ""); */
 
 export class Loopback {
-  getListTask(loopback: Api, inputs: Input[], options: Input[]): Listr {
+  getListTask(loopback: Api): Listr {
     let runner = new SchematicRunner();
     console.log(
       chalk.default.bgYellowBright(

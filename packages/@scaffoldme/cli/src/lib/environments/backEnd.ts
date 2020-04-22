@@ -1,4 +1,4 @@
-import { Api, EnvironmentInfosWithRelations, Input } from "@scaffoldme/core";
+import { Api, EnvironmentInfosWithRelations } from "@scaffoldme/core";
 import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
 import chalk from "chalk";
 import * as fs from "fs";
@@ -9,11 +9,7 @@ const boxen = require("boxen");
 export class backEnd {
   constructor(public loopback: Loopback = new Loopback()) {}
 
-  async install(
-    environment: EnvironmentInfosWithRelations,
-    inputs: Input[],
-    options: Input[]
-  ) {
+  async install(environment: EnvironmentInfosWithRelations) {
     /* if (
       shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0
     ) { */
@@ -28,11 +24,7 @@ export class backEnd {
 
     switch (jsonScaffoldmeBackEnd.framework?.technologyName) {
       case "Loopback":
-        const loopback = this.loopback.getListTask(
-          jsonScaffoldmeBackEnd,
-          inputs,
-          options
-        );
+        const loopback = this.loopback.getListTask(jsonScaffoldmeBackEnd);
         await loopback.run();
         await console.log(
           boxen(
