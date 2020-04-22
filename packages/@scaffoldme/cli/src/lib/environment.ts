@@ -8,6 +8,10 @@ import { backEnd } from "./environments/backEnd";
 import { frontEnd } from "./environments/frontEnd";
 
 export class Environment implements BaseEnvironment {
+  constructor(
+    public backend: backEnd = new backEnd(),
+    public frontend: frontEnd = new frontEnd()
+  ) {}
   async install(
     environment: EnvironmentInfosWithRelations,
     inputs: Input[],
@@ -15,10 +19,10 @@ export class Environment implements BaseEnvironment {
   ) {
     switch (environment.environmentType) {
       case "frontend":
-        await frontEnd.install(environment);
+        await this.frontend.install(environment);
         break;
       case "api":
-        await backEnd.install(environment, inputs, options);
+        await this.backend.install(environment, inputs, options);
         break;
 
       default:

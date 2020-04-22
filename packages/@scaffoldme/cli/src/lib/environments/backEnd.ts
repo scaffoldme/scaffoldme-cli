@@ -2,11 +2,14 @@ import { Api, EnvironmentInfosWithRelations, Input } from "@scaffoldme/core";
 import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
 import chalk from "chalk";
 import * as fs from "fs";
-import { SchematicRunner } from "../runners/schematic.runner";
+import { Loopback } from "../generator/loopback";
 var shell = require("shelljs");
+const boxen = require("boxen");
 
 export class backEnd {
-  public static async install(
+  constructor(public loopback: Loopback = new Loopback()) {}
+
+  async install(
     environment: EnvironmentInfosWithRelations,
     inputs: Input[],
     options: Input[]
@@ -25,11 +28,23 @@ export class backEnd {
 
     switch (jsonScaffoldmeBackEnd.framework?.technologyName) {
       case "Loopback":
-        await this.installLoopackFramework(
+        const loopback = this.loopback.getListTask(
           jsonScaffoldmeBackEnd,
           inputs,
           options
         );
+        await loopback.run();
+        await console.log(
+          boxen(
+            "Powered with 💓 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1",
+            { padding: 1, margin: 1, borderStyle: "double" }
+          )
+        );
+        /* await this.installLoopackFramework(
+          jsonScaffoldmeBackEnd,
+          inputs,
+          options
+        ); */
         shell.cd("..");
         break;
 
@@ -44,7 +59,7 @@ export class backEnd {
     // }
   }
 
-  private static async installLoopackFramework(
+  /*  private static async installLoopackFramework(
     loopback: Api,
     inputs: Input[],
     options: Input[]
@@ -60,13 +75,9 @@ export class backEnd {
       `${runner.findClosestSchematicsBinary()} @scaffoldme/schematics-loopback:application`
     );
 
-    // await generateApplicationFiles(inputs, options);
+    await shell.exec("mv Dockerfile.template Dockerfile && npm i");
 
-    /* const { stdout, stderr } = await shell.exec(
-      "/home/mahamadou/Documents/Projects/ETNA/scaffoldme-cli/packages/scaffoldme/node_modules/.bin/schematics @scaffoldme/schematics-loopback:application"
-    );
-    console.log({ stdout, stderr }); */
-  }
+  } */
 }
 
 /* const generateApplicationFiles = async (args: Input[], options: Input[]) => {

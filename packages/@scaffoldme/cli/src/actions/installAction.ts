@@ -4,7 +4,7 @@ import { Input } from "../input";
 import { Environment } from "../lib/environment";
 import { Project } from "../lib/project";
 import { AbstractAction } from "./abstractAction";
-const ora = require("ora");
+var shell = require("shelljs");
 
 export class InstallAction extends AbstractAction {
   /**
@@ -17,21 +17,23 @@ export class InstallAction extends AbstractAction {
     project.load();
 
     //const spinner = ora('Loading unicorns').start();
-    const spinner = ora(
+    /* const spinner = ora(
       chalk.yellowBright("Setup project progress .... ")
-    ).start();
+    ).start(); */
+    console.log(chalk.yellowBright("Setup project progress .... "));
     console.info();
-    // spinner.start();
+    shell.echo("");
+    shell.echo("Prenez un café ☕ et patientez pendant l'installation ... ");
+    shell.echo("");
     try {
       const environments = project.getEnvironments();
       for (let index = 0; index < environments.length; index++) {
         // console.log(environments[index]);
         await environment.install(environments[index], inputs, options);
       }
-      spinner.succeed("Steup project done !");
+      console.log(chalk.greenBright("Setup project done ! "));
     } catch {
       console.info("failed");
-      spinner.fail();
     }
 
     /* const environments = project.getEnvironments();

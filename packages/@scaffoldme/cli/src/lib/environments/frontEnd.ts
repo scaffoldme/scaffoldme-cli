@@ -2,11 +2,13 @@ import { EnvironmentInfosWithRelations, FrontEnd } from "@scaffoldme/core";
 import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
 import chalk from "chalk";
 import * as fs from "fs";
-import { SchematicRunner } from "../runners/schematic.runner";
+import { Angular } from "../generator/angular";
 var shell = require("shelljs");
+const boxen = require("boxen");
 
 export class frontEnd {
-  public static async install(environment: EnvironmentInfosWithRelations) {
+  constructor(public angular: Angular = new Angular()) {}
+  async install(environment: EnvironmentInfosWithRelations) {
     // if (
     //   shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0
     // ) {
@@ -22,11 +24,19 @@ export class frontEnd {
 
     switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
       case "Angular":
-        await this.installAngularFramework(jsonScaffoldmeFrontEnd);
+        //await this.installAngularFramework(jsonScaffoldmeFrontEnd);
+        const loopback = this.angular.getListTask(jsonScaffoldmeFrontEnd);
+        await loopback.run();
+        await console.log(
+          boxen(
+            "Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1",
+            { padding: 1, margin: 1, borderStyle: "double" }
+          )
+        );
         shell.cd("..");
         break;
       case "React":
-        await this.installReactFramework();
+        // await this.installReactFramework();
         shell.cd("..");
         break;
 
@@ -41,7 +51,7 @@ export class frontEnd {
     // }
   }
 
-  private static async installAngularFramework(front: FrontEnd) {
+  /* private static async installAngularFramework(front: FrontEnd) {
     if (front.framework.versionId ?? front.framework.versionId === "8.0.0") {
       console.log(
         chalk.yellowBright(
@@ -63,5 +73,5 @@ export class frontEnd {
   }
   private static async installReactFramework() {
     console.log("install react");
-  }
+  } */
 }

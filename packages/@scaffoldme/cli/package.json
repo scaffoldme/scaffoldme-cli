@@ -50,7 +50,11 @@
     "cpx": "1.5.0",
     "jsonfile": "^5.0.0",
     "ora": "4.0.3",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "listr": "^0.14.3",
+    "@types/listr": "^0.13.0",
+    "boxen": "^3.1.0",
+    "execa": "^1.0.0"
   },
   "gitHead": "f7c13696c88b405f751f6bda932b7c2cf91bb8b5"
 }
