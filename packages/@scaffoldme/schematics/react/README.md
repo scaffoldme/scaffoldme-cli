@@ -1,1 +1,1 @@
-# scaffoldme-schematics-loopback
+# scaffoldme-schematics-react
