@@ -22,10 +22,12 @@
     "publish": "lerna publish -m 'chore(release): publish [skip ci]' --exact --conventional-commits"
   },
   "dependencies": {
+    "@scaffoldme/cli": "^1.0.19",
     "@types/node": "^12.12.17",
     "commander": "^4.0.1",
     "listr": "^0.14.3",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "uninstall": "0.0.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "^9.0.3",

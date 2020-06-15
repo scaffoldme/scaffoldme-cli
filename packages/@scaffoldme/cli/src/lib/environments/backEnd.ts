@@ -1,10 +1,10 @@
-import { Api, EnvironmentInfosWithRelations } from "@scaffoldme/core";
-import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
-import chalk from "chalk";
-import * as fs from "fs";
-import { Loopback } from "../generator/loopback";
-var shell = require("shelljs");
-const boxen = require("boxen");
+import { Api, EnvironmentInfosWithRelations } from '@scaffoldme/core';
+import { MESSAGES, PROJECT_FILE } from '@scaffoldme/utils';
+import chalk from 'chalk';
+import * as fs from 'fs';
+import { Loopback } from '../generator/loopback';
+const shell = require('shelljs');
+const boxen = require('boxen');
 
 export class backEnd {
   constructor(public loopback: Loopback = new Loopback()) {}
@@ -19,17 +19,17 @@ export class backEnd {
       process.exit(0);
     }
     const jsonScaffoldmeBackEnd: Api = JSON.parse(
-      fs.readFileSync(PROJECT_FILE, "utf8")
+      fs.readFileSync(PROJECT_FILE, 'utf8')
     );
 
     switch (jsonScaffoldmeBackEnd.framework?.technologyName) {
-      case "Loopback":
+      case 'Loopback':
         const loopback = this.loopback.getListTask(jsonScaffoldmeBackEnd);
         await loopback.run();
         await console.log(
           boxen(
-            "Powered with 💓 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1",
-            { padding: 1, margin: 1, borderStyle: "double" }
+            'Powered with 💓 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1',
+            { padding: 1, margin: 1, borderStyle: 'double' }
           )
         );
         /* await this.installLoopackFramework(
@@ -37,7 +37,7 @@ export class backEnd {
           inputs,
           options
         ); */
-        shell.cd("..");
+        shell.cd('..');
         break;
 
       default:

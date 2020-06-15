@@ -6,6 +6,7 @@ export * from "./actions";
 export * from "./input";
 export * from "./lib";
 export * from "./loader";
+export * from "../boxen"
 
 // let projectJson: Project | undefined;
 // export let project: Project | undefined = projectJson;
