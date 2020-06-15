@@ -12,6 +12,31 @@ descripton
 $ npm install -g @scaffoldme/cli
 ```
 
+
+## Local installation
+Locate  inside this directory. 
+````shell script
+cd /Path/to/go/scaffoldme-cli/packages/@scaffoldme/cli
+````
+
+and execute this commande
+
+```shell script
+npm i -g 
+```
+in your package.json you have this line
+
+````json
+{
+ "bin": {
+    "sc": "./bin/scaffoldme",
+    "scaffoldme": "./bin/scaffoldme"
+  }
+}
+````
+these lines above will create a symbolic link to the commands in your path. 
+these lines will make the creation of a symbolic link to the commands in your path, so all the modifications made will be added directly after the last registration. 
+
 ## Usage
 
 ```
