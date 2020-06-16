@@ -9,7 +9,7 @@ import { frontEnd } from './environments/frontEnd';
 export class Environment implements BaseEnvironment {
   constructor(
     public backend: backEnd = new backEnd(),
-    public frontend: frontEnd = new frontEnd()
+    public frontend: FrontEnd = new FrontEnd()
   ) {}
   async install(environment: EnvironmentInfosWithRelations) {
     switch (environment.environmentType) {

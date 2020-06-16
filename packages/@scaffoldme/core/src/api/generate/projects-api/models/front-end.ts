@@ -18,35 +18,35 @@ import { SelectedTechnology } from "./selected-technology";
  * @export
  * @interface FrontEnd
  */
-export interface FrontEnd {
+export interface IFrontEnd {
   /**
    *
    * @type {string}
-   * @memberof FrontEnd
+   * @memberof IFrontEnd
    */
   name: string;
   /**
    *
    * @type {string}
-   * @memberof FrontEnd
+   * @memberof IFrontEnd
    */
   description?: string;
   /**
    *
    * @type {SelectedTechnology}
-   * @memberof FrontEnd
+   * @memberof IFrontEnd
    */
   framework: SelectedTechnology;
   /**
    *
    * @type {SelectedTechnology}
-   * @memberof FrontEnd
+   * @memberof IFrontEnd
    */
   style?: SelectedTechnology;
   /**
    *
    * @type {Array<SelectedTechnology>}
-   * @memberof FrontEnd
+   * @memberof IFrontEnd
    */
   modules?: Array<SelectedTechnology>;
 }

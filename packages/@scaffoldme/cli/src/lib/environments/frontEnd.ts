@@ -1,13 +1,19 @@
-import { EnvironmentInfosWithRelations, FrontEnd } from '@scaffoldme/core';
-import { MESSAGES, PROJECT_FILE } from '@scaffoldme/utils';
+import {EnvironmentInfosWithRelations, IFrontEnd} from '@scaffoldme/core';
+import {MESSAGES, PROJECT_FILE} from '@scaffoldme/utils';
 import chalk from 'chalk';
 import * as fs from 'fs';
-import { Angular } from '../generator/angular';
-const shell = require('shelljs');
-const boxen = require('boxen');
+import {Angular} from '../generator/angular';
+import {ReactGenerator} from '../generator/react';
+import {Logger} from '../utils/logger';
 
-export class frontEnd {
-  constructor(public angular: Angular = new Angular()) {}
+const shell = require('shelljs');
+
+export class FrontEnd {
+  logger = new Logger('FrontEnd');
+
+  constructor(public angular: Angular = new Angular(), private react: ReactGenerator = new ReactGenerator()) {
+  }
+
   async install(environment: EnvironmentInfosWithRelations) {
     // if (
     //   shell.exec(`git clone ${environment.depot} ${environment.name}`) !== 0
@@ -15,28 +21,26 @@ export class frontEnd {
     shell.cd(environment.name);
     if (!fs.existsSync(PROJECT_FILE)) {
       console.error(chalk.red(MESSAGES.SCAFFOLDME_JSON_FILE_NOT_EXIST));
-      process.exit(0);
+      //  process.exit(0);
     }
-    const jsonScaffoldmeFrontEnd: FrontEnd = JSON.parse(
+
+    const jsonScaffoldmeFrontEnd: IFrontEnd = JSON.parse(
       fs.readFileSync(PROJECT_FILE, 'utf8')
     );
     // console.log(jsonScaffoldmeFrontEnd.framework.technologyName);
-
     switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
       case 'Angular':
         // await this.installAngularFramework(jsonScaffoldmeFrontEnd);
-        const loopback = this.angular.getListTask(jsonScaffoldmeFrontEnd);
-        await loopback.run();
-        await console.log(
-          boxen(
-            'Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1',
-            { padding: 1, margin: 1, borderStyle: 'double' }
-          )
-        );
+        const angular = this.angular.getListTask(jsonScaffoldmeFrontEnd);
+        await angular.run();
+        await this.logger.signatureTeams('http://localhost:4200', 'angular_app', 'angular-app:v1');
         shell.cd('..');
         break;
       case 'React':
         // await this.installReactFramework();
+        const react = this.react.getListTask(jsonScaffoldmeFrontEnd);
+        await react.run();
+        await this.logger.signatureTeams('http://localhost:3000', 'react_app', 'react-app:v1');
         shell.cd('..');
         break;
 
@@ -51,7 +55,7 @@ export class frontEnd {
     // }
   }
 
-  /* private static async installAngularFramework(front: FrontEnd) {
+  /* private static async installAngularFramework(front: IFrontEnd) {
     if (front.framework.versionId ?? front.framework.versionId === "8.0.0") {
       console.log(
         chalk.yellowBright(
@@ -74,4 +78,5 @@ export class frontEnd {
   private static async installReactFramework() {
     console.log("install react");
   } */
+
 }
