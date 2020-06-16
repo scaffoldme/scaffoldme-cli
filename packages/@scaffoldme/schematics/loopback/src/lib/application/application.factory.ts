@@ -1,4 +1,4 @@
-import { join, Path, strings } from "@angular-devkit/core";
+import { join, Path, strings } from '@angular-devkit/core';
 import {
   apply,
   mergeWith,
@@ -7,21 +7,21 @@ import {
   Source,
   template,
   url
-} from "@angular-devkit/schematics";
-import { basename, parse } from "path";
+} from '@angular-devkit/schematics';
+import { basename, parse } from 'path';
 import {
   DEFAULT_AUTHOR,
   DEFAULT_DESCRIPTION,
   DEFAULT_LANGUAGE,
   DEFAULT_VERSION
-} from "../default";
-import { ApplicationOptions } from "./definition";
+} from '../default';
+import { ApplicationOptions } from './definition';
 
 export function main(options: ApplicationOptions): Rule {
-  options.name = strings.dasherize(options.name ? options.name : "");
+  options.name = strings.dasherize(options.name ? options.name : '');
 
   const path =
-    !options.directory || options.directory === "undefined"
+    !options.directory || options.directory === 'undefined'
       ? options.name
       : options.directory;
 
@@ -38,23 +38,23 @@ function transform(options: ApplicationOptions): ApplicationOptions {
     ? target.description
     : DEFAULT_DESCRIPTION;
   target.language = !!target.language ? target.language : DEFAULT_LANGUAGE;
-  target.name = resolvePackageName(target.name ? target.name : ".");
+  target.name = resolvePackageName(target.name ? target.name : '.');
   target.version = !!target.version ? target.version : DEFAULT_VERSION;
 
   target.packageManager =
-    !target.packageManager || target.packageManager === "undefined"
-      ? "npm"
+    !target.packageManager || target.packageManager === 'undefined'
+      ? 'npm'
       : target.packageManager;
-  target.dependencies = !!target.dependencies ? target.dependencies : "";
+  target.dependencies = !!target.dependencies ? target.dependencies : '';
   target.devDependencies = !!target.devDependencies
     ? target.devDependencies
-    : "";
+    : '';
   return target;
 }
 
 function resolvePackageName(path: string) {
   const { name } = parse(path);
-  if (name === ".") {
+  if (name === '.') {
     return basename(process.cwd());
   }
   return name;
@@ -62,7 +62,7 @@ function resolvePackageName(path: string) {
 
 function generate(options: ApplicationOptions, path: string): Source {
   return apply(
-    url(join("./files" as Path, options.language ? options.language : "ts")),
+    url(join('./files' as Path, options.language ? options.language : 'ts')),
     [
       template({
         ...strings,
