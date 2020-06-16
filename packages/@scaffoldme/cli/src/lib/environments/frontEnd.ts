@@ -1,10 +1,10 @@
-import { EnvironmentInfosWithRelations, FrontEnd } from "@scaffoldme/core";
-import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
-import chalk from "chalk";
-import * as fs from "fs";
-import { Angular } from "../generator/angular";
-var shell = require("shelljs");
-const boxen = require("boxen");
+import { EnvironmentInfosWithRelations, FrontEnd } from '@scaffoldme/core';
+import { MESSAGES, PROJECT_FILE } from '@scaffoldme/utils';
+import chalk from 'chalk';
+import * as fs from 'fs';
+import { Angular } from '../generator/angular';
+const shell = require('shelljs');
+const boxen = require('boxen');
 
 export class frontEnd {
   constructor(public angular: Angular = new Angular()) {}
@@ -18,26 +18,26 @@ export class frontEnd {
       process.exit(0);
     }
     const jsonScaffoldmeFrontEnd: FrontEnd = JSON.parse(
-      fs.readFileSync(PROJECT_FILE, "utf8")
+      fs.readFileSync(PROJECT_FILE, 'utf8')
     );
     // console.log(jsonScaffoldmeFrontEnd.framework.technologyName);
 
     switch (jsonScaffoldmeFrontEnd.framework.technologyName) {
-      case "Angular":
-        //await this.installAngularFramework(jsonScaffoldmeFrontEnd);
+      case 'Angular':
+        // await this.installAngularFramework(jsonScaffoldmeFrontEnd);
         const loopback = this.angular.getListTask(jsonScaffoldmeFrontEnd);
         await loopback.run();
         await console.log(
           boxen(
-            "Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1",
-            { padding: 1, margin: 1, borderStyle: "double" }
+            'Powered with  💙 by scaffoldme team\nYour app runing at http://localhost:4200\nYour docker container name is : angular_app\nYour docker container image name is : angular-app:v1',
+            { padding: 1, margin: 1, borderStyle: 'double' }
           )
         );
-        shell.cd("..");
+        shell.cd('..');
         break;
-      case "React":
+      case 'React':
         // await this.installReactFramework();
-        shell.cd("..");
+        shell.cd('..');
         break;
 
       default:

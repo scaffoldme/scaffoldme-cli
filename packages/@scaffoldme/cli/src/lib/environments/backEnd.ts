@@ -3,11 +3,16 @@ import { MESSAGES, PROJECT_FILE } from "@scaffoldme/utils";
 import chalk from "chalk";
 import * as fs from "fs";
 import { Loopback } from "../generator/loopback";
-var shell = require("shelljs");
+import { NestjsGenerator } from "../generator/nestjs";
+
+const shell = require("shelljs");
 const boxen = require("boxen");
 
 export class backEnd {
-  constructor(public loopback: Loopback = new Loopback()) {}
+  constructor(
+    public loopback: Loopback = new Loopback(),
+    private nestjs: NestjsGenerator = new NestjsGenerator()
+  ) {}
 
   async install(environment: EnvironmentInfosWithRelations) {
     /* if (
@@ -29,6 +34,25 @@ export class backEnd {
         await console.log(
           boxen(
             "Powered with 💓 by scaffoldme team\nYour app runing at http://localhost:3000\nYour docker container name is : loopback_app\nYour docker container image name is : loopback-app:v1",
+            { padding: 1, margin: 1, borderStyle: "double" }
+          )
+        );
+        /* await this.installLoopackFramework(
+          jsonScaffoldmeBackEnd,
+          inputs,
+          options
+        ); */
+        shell.cd("..");
+        break;
+      case "NestJs":
+        console.log("coucou");
+        const nestjs = this.nestjs.getListTask(jsonScaffoldmeBackEnd);
+        await nestjs.run().catch(
+          (err) => console.log(err)
+        );
+        await console.log(
+          boxen(
+            "Powered with 💓 by scaffoldme team\nYour app runing at http://localhost:5000\nYour docker container name is : nestjs_app\nYour docker container image name is : nestjs-app:v1",
             { padding: 1, margin: 1, borderStyle: "double" }
           )
         );

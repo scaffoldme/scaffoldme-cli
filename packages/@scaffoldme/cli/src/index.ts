@@ -1,11 +1,11 @@
-import { Project } from "@scaffoldme/core";
-import { PROJECT_FILE } from "@scaffoldme/utils";
-const jsonfile = require("jsonfile");
+import { Project } from '@scaffoldme/core';
+import { PROJECT_FILE } from '@scaffoldme/utils';
+const jsonfile = require('jsonfile');
 
-export * from "./actions";
-export * from "./input";
-export * from "./lib";
-export * from "./loader";
+export * from './actions';
+export * from './input';
+export * from './lib';
+export * from './loader';
 
 // let projectJson: Project | undefined;
 // export let project: Project | undefined = projectJson;

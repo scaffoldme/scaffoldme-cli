@@ -11,7 +11,6 @@ descripton
 ```
 $ npm install -g @scaffoldme/cli
 ```
-
 ## Usage
 
 ```

@@ -28,7 +28,7 @@ export class InstallAction extends AbstractAction {
     try {
       const environments = project.getEnvironments();
       for (let index = 0; index < environments.length; index++) {
-        // console.log(environments[index]);
+        //console.log(environments[index]);
         await environment.install(environments[index]);
       }
       console.log(chalk.greenBright("Setup project done ! "));
@@ -45,7 +45,7 @@ export class InstallAction extends AbstractAction {
 
 /**
  * Check if scaffoldme file exist
-/*  
+/*
 **
 const checkScaffoldmeJsonFile = async () => {
   try {

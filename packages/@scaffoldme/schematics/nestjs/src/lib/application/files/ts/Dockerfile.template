@@ -1,0 +1,28 @@
+FROM node:10.16.0-alpine AS builder
+
+
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm install --no-progress
+COPY ./ ./
+RUN npm run build
+
+
+FROM node:12-alpine
+
+
+ENV NODE_ENV=production
+ENV HTTP_PORT=80
+
+WORKDIR /usr/src/app
+COPY --from=builder  /usr/src/app/package.json ./
+COPY --from=builder /usr/src/app/dist ./dist
+RUN npm install --no-progress
+
+
+
+# Bind to all network interfaces so that it can be mapped to the host OS
+ENV HOST=0.0.0.0 PORT=80
+
+EXPOSE ${PORT}
+ENTRYPOINT [ "npm", "run", "start:prod" ]
